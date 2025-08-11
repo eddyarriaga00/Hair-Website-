@@ -471,8 +471,7 @@
                         <h3 class="text-custom-pink mb-4 text-xl md:text-2xl font-semibold flex items-center gap-2">
                             🎀 My Story
                         </h3>
-                        <p>[Add your personal journey into hair braiding - what inspired you to start, your training,
-                            passion for natural hair care, etc.]</p>
+                        <p>[Blank]</p>
                     </div>
 
                     <div>
@@ -953,7 +952,7 @@
                     </button>
                     <div class="faq-answer px-6 md:px-8 text-base md:text-lg leading-relaxed">
                         Please provide at least 24 hours notice for cancellations or rescheduling. Late cancellations
-                        may incur a fee. No-shows will be charged 50% of the service cost.
+                        may incur a fee. No-shows will be charged 75% of the service cost.
                     </div>
                 </div>
 
@@ -965,7 +964,7 @@
                         <span class="transform transition-transform duration-300">▼</span>
                     </button>
                     <div class="faq-answer px-6 md:px-8 text-base md:text-lg leading-relaxed">
-                        Pricing varies by style, size, and length. Basic services start at $[Your Starting Price]. I
+                        Pricing varies by style, size, and length. Basic services start at $[Blank]. I
                         provide transparent pricing during consultation, with no hidden fees. Payment is due at time of
                         service.
                     </div>
@@ -1353,7 +1352,7 @@
             }, 3000);
 
             // Send email notification to business owner
-            const emailBody = `New Review Submitted!
+            const emailBody = `Review Submission Form
 
 Client: ${name}
 Service: ${service || 'Not specified'}
@@ -1361,7 +1360,7 @@ Rating: ${rating.value} stars
 Review: ${reviewText}
 Date: ${review.date}
 
-Please check your website for the full review display.`;
+`;
 
             window.open(`mailto:janiayab11@gmail.com?subject=New Client Review - ${rating.value} Stars&body=${encodeURIComponent(emailBody)}`);
         }
@@ -1546,10 +1545,10 @@ Service Details:
 Additional Details:
 ${formData.message || 'None provided'}
 
-Please respond using their preferred contact method. 🎀
+🎀
 
 ---
-Sent from your website detailed booking form
+Sent from website booking form
 ${new Date().toLocaleString()}`;
 
             // Always send email, but customize message based on preference
