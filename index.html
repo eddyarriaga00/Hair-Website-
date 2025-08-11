@@ -1068,70 +1068,25 @@
             });
         });
 
-        // Service Card Interactions
+        // Service Card Interactions - Simplified
         function showServiceDetails(serviceId) {
-            document.querySelectorAll('.service-card').forEach(card => {
-                card.classList.remove('active');
-            });
-            
             const serviceCard = document.querySelector(`[onclick="showServiceDetails('${serviceId}')"]`);
-            serviceCard.classList.add('active');
-            
-            serviceCard.scrollIntoView({
-                behavior: 'smooth',
-                block: 'center'
-            });
-        }
-
-        // Star Rating Functionality - Completely rewritten
-        document.addEventListener('DOMContentLoaded', function() {
-            const ratingContainer = document.querySelector('.star-rating');
-            if (!ratingContainer) return;
-            
-            const stars = document.querySelectorAll('.star-rating label');
-            const radios = document.querySelectorAll('.star-rating input[type="radio"]');
-            
-            // Convert NodeList to Array and reverse it to match our CSS order
-            const starsArray = Array.from(stars).reverse();
-            const radiosArray = Array.from(radios).reverse();
-            
-            starsArray.forEach((star, index) => {
-                const rating = index + 1;
-                
-                // Handle click
-                star.addEventListener('click', function() {
-                    selectedRating = rating;
-                    radiosArray[index].checked = true;
-                    updateStarDisplay(rating);
+            if (serviceCard) {
+                serviceCard.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'center'
                 });
                 
-                // Handle hover
-                star.addEventListener('mouseenter', function() {
-                    if (selectedRating === 0) {
-                        updateStarDisplay(rating);
-                    }
-                });
-            });
-            
-            // Reset on container mouse leave if no rating selected
-            ratingContainer.addEventListener('mouseleave', function() {
-                if (selectedRating === 0) {
-                    updateStarDisplay(0);
-                } else {
-                    updateStarDisplay(selectedRating);
-                }
-            });
-            
-            function updateStarDisplay(rating) {
-                starsArray.forEach((star, index) => {
-                    if (index < rating) {
-                        star.style.color = '#FFA1D3';
-                    } else {
-                        star.style.color = '#ddd';
-                    }
-                });
+                // Add temporary highlight effect
+                serviceCard.style.transform = 'translateY(-2px)';
+                serviceCard.style.boxShadow = '0 25px 50px rgba(245, 39, 166, 0.2)';
+                
+                setTimeout(() => {
+                    serviceCard.style.transform = '';
+                    serviceCard.style.boxShadow = '';
+                }, 1000);
             }
-        });
+        }
 
         // Submit Review Function
         function submitReview() {
@@ -1234,7 +1189,7 @@ Please check your website for the full review display.`;
             });
         }
 
-        // FAQ Toggle Function
+        // FAQ Toggle Function - Updated for lighter animations
         function toggleFAQ(button) {
             const answer = button.nextElementSibling;
             const arrow = button.querySelector('span');
@@ -1446,19 +1401,25 @@ ${new Date().toLocaleString()}`;
             document.getElementById('newsletter-email').value = '';
         }
 
-        // Mobile menu toggle
+        // Mobile menu toggle - Updated for lighter animations
         function toggleMobileMenu() {
             const mobileMenu = document.getElementById('mobileMenu');
             const menuBtn = document.querySelector('.mobile-menu-btn');
             
-            if (mobileMenu.classList.contains('hidden')) {
-                mobileMenu.classList.remove('hidden');
-                menuBtn.classList.add('active');
-                menuBtn.innerHTML = '✕';
-            } else {
-                mobileMenu.classList.add('hidden');
-                menuBtn.classList.remove('active');
-                menuBtn.innerHTML = '☰';
+            if (mobileMenu && menuBtn) {
+                if (mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.remove('hidden');
+                    mobileMenu.style.display = 'block';
+                    menuBtn.classList.add('active');
+                    menuBtn.innerHTML = '✕';
+                    menuBtn.setAttribute('aria-expanded', 'true');
+                } else {
+                    mobileMenu.classList.add('hidden');
+                    mobileMenu.style.display = 'none';
+                    menuBtn.classList.remove('active');
+                    menuBtn.innerHTML = '☰';
+                    menuBtn.setAttribute('aria-expanded', 'false');
+                }
             }
         }
 
@@ -1466,9 +1427,13 @@ ${new Date().toLocaleString()}`;
             const mobileMenu = document.getElementById('mobileMenu');
             const menuBtn = document.querySelector('.mobile-menu-btn');
             
-            mobileMenu.classList.add('hidden');
-            menuBtn.classList.remove('active');
-            menuBtn.innerHTML = '☰';
+            if (mobileMenu && menuBtn) {
+                mobileMenu.classList.add('hidden');
+                mobileMenu.style.display = 'none';
+                menuBtn.classList.remove('active');
+                menuBtn.innerHTML = '☰';
+                menuBtn.setAttribute('aria-expanded', 'false');
+            }
         }
 
         // Back to top functionality
@@ -1501,17 +1466,25 @@ ${new Date().toLocaleString()}`;
                 dateInput.setAttribute('min', today);
             }
 
-            // Initialize star rating
-            initializeStarRating();
+            // Initialize star rating - using the enhanced version
+            setTimeout(() => {
+                initializeStarRating();
+            }, 100);
             
             // Initialize scroll animations
             initializeScrollAnimations();
             
             // Initialize accessibility features
             initializeAccessibility();
+            
+            // Initialize modal close button
+            const closeBtn = document.querySelector('#bookingModal .close');
+            if (closeBtn) {
+                closeBtn.addEventListener('click', closeBookingModal);
+            }
         });
 
-        // Enhanced star rating initialization
+        // Enhanced star rating initialization - Fixed version
         function initializeStarRating() {
             const ratingContainer = document.querySelector('.star-rating');
             if (!ratingContainer) return;
@@ -1523,80 +1496,95 @@ ${new Date().toLocaleString()}`;
             const starsArray = Array.from(stars).reverse();
             const radiosArray = Array.from(radios).reverse();
             
-            starsArray.forEach((star, index) => {
-                const rating = index + 1;
-                
-                // Handle click with enhanced visual feedback
-                star.addEventListener('click', function() {
-                    selectedRating = rating;
-                    radiosArray[index].checked = true;
-                    updateStarDisplay(rating, 'selected');
-                    
-                    // Add enhanced click feedback
-                    star.style.transform = 'scale(1.3)';
-                    star.style.color = '#F527A6';
-                    star.style.textShadow = '0 0 20px rgba(245, 39, 166, 0.8)';
-                    
-                    setTimeout(() => {
-                        updateStarDisplay(rating, 'selected');
-                    }, 200);
+            // Reset all stars to default state
+            function resetStars() {
+                starsArray.forEach(star => {
+                    star.style.color = '#ddd';
+                    star.style.textShadow = 'none';
+                    star.style.transform = 'scale(1)';
+                    star.style.opacity = '1';
                 });
-                
-                // Handle hover with preview
-                star.addEventListener('mouseenter', function() {
-                    if (selectedRating === 0) {
-                        updateStarDisplay(rating, 'hover');
-                    }
-                });
-            });
+            }
             
-            // Reset on container mouse leave
-            ratingContainer.addEventListener('mouseleave', function() {
-                if (selectedRating === 0) {
-                    updateStarDisplay(0, 'reset');
-                } else {
-                    updateStarDisplay(selectedRating, 'selected');
-                }
-            });
-            
-            function updateStarDisplay(rating, state) {
+            // Update star display based on rating
+            function updateStarDisplay(rating, isHover = false) {
                 starsArray.forEach((star, index) => {
-                    if (state === 'selected') {
-                        if (index < rating) {
+                    if (index < rating) {
+                        if (isHover && selectedRating === 0) {
+                            // Hover preview when no selection
+                            star.style.color = '#FFA1D3';
+                            star.style.textShadow = '0 0 8px rgba(255, 161, 211, 0.4)';
+                            star.style.transform = 'scale(1.05)';
+                            star.style.opacity = '1';
+                        } else {
+                            // Selected state
                             star.style.color = '#F527A6';
                             star.style.textShadow = '0 0 15px rgba(245, 39, 166, 0.6)';
                             star.style.transform = 'scale(1.05)';
-                        } else {
+                            star.style.opacity = '1';
+                        }
+                    } else {
+                        // Unselected stars
+                        if (selectedRating > 0 && !isHover) {
                             star.style.color = '#ccc';
                             star.style.textShadow = 'none';
                             star.style.transform = 'scale(0.9)';
                             star.style.opacity = '0.5';
-                        }
-                    } else if (state === 'hover') {
-                        if (index < rating) {
-                            star.style.color = '#FFA1D3';
-                            star.style.textShadow = '0 0 8px rgba(255, 161, 211, 0.4)';
-                            star.style.transform = 'scale(1.05)';
                         } else {
                             star.style.color = '#ddd';
                             star.style.textShadow = 'none';
                             star.style.transform = 'scale(1)';
-                            star.style.opacity = '0.7';
+                            star.style.opacity = '1';
                         }
-                    } else if (state === 'reset') {
-                        star.style.color = '#ddd';
-                        star.style.textShadow = 'none';
-                        star.style.transform = 'scale(1)';
-                        star.style.opacity = '1';
                     }
                 });
             }
             
-            // Add function to reset stars (used when form is reset)
+            starsArray.forEach((star, index) => {
+                const rating = index + 1;
+                
+                // Handle click
+                star.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    selectedRating = rating;
+                    radiosArray[index].checked = true;
+                    
+                    // Clear all radio buttons first
+                    radiosArray.forEach(radio => radio.checked = false);
+                    // Set the correct one
+                    radiosArray[index].checked = true;
+                    
+                    updateStarDisplay(rating, false);
+                    
+                    // Add visual feedback for click
+                    star.style.transform = 'scale(1.2)';
+                    setTimeout(() => {
+                        updateStarDisplay(rating, false);
+                    }, 150);
+                });
+                
+                // Handle hover
+                star.addEventListener('mouseenter', function() {
+                    if (selectedRating === 0) {
+                        updateStarDisplay(rating, true);
+                    }
+                });
+            });
+            
+            // Handle mouse leave on container
+            ratingContainer.addEventListener('mouseleave', function() {
+                if (selectedRating === 0) {
+                    resetStars();
+                } else {
+                    updateStarDisplay(selectedRating, false);
+                }
+            });
+            
+            // Global function to reset star rating
             window.resetStarRating = function() {
                 selectedRating = 0;
-                updateStarDisplay(0, 'reset');
                 radiosArray.forEach(radio => radio.checked = false);
+                resetStars();
             };
         }
 
