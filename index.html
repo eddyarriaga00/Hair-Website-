@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -112,13 +113,13 @@
     </script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
-        
+
         body {
             font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
         }
-        
+
         /* Touch optimization for mobile devices */
         .touch-manipulation {
             touch-action: manipulation;
@@ -128,7 +129,7 @@
             -ms-user-select: none;
             user-select: none;
         }
-        
+
         /* Custom gradient text for older browsers */
         .gradient-text {
             background: linear-gradient(45deg, #F527A6, #FFA1D3);
@@ -136,23 +137,26 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
-        
+
         /* Custom scrollbar */
         .custom-scrollbar::-webkit-scrollbar {
             width: 4px;
         }
+
         .custom-scrollbar::-webkit-scrollbar-track {
             background: rgba(245, 39, 166, 0.1);
             border-radius: 2px;
         }
+
         .custom-scrollbar::-webkit-scrollbar-thumb {
             background: linear-gradient(180deg, #F527A6, #FFA1D3);
             border-radius: 2px;
         }
+
         .custom-scrollbar::-webkit-scrollbar-thumb:hover {
             background: linear-gradient(180deg, #FFA1D3, #F527A6);
         }
-        
+
         /* Section separator animation */
         .section-separator::before {
             content: '';
@@ -161,15 +165,15 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
             animation: shimmer 3s ease-in-out infinite;
         }
-        
+
         /* Star rating specific styles */
         .star-rating input[type="radio"] {
             display: none;
         }
-        
+
         .star-rating label {
             cursor: pointer;
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -177,44 +181,44 @@
             position: relative;
             transform-origin: center;
         }
-        
+
         .star-rating label:hover {
             color: #FFA1D3;
             transform: scale(1.1);
             text-shadow: 0 0 10px rgba(255, 161, 211, 0.5);
         }
-        
+
         .star-rating label.selected {
             color: #F527A6;
             text-shadow: 0 0 15px rgba(245, 39, 166, 0.6);
             transform: scale(1.05);
             animation: starGlow 0.5s ease-out;
         }
-        
+
         .star-rating label.unselected {
             color: #ccc;
             opacity: 0.5;
             transform: scale(0.9);
             filter: grayscale(100%);
         }
-        
+
         .star-rating label.hover-preview {
             color: #FFA1D3;
             text-shadow: 0 0 8px rgba(255, 161, 211, 0.4);
             transform: scale(1.05);
         }
-        
+
         /* FAQ transition */
         .faq-answer {
             max-height: 0;
             overflow: hidden;
             transition: all 0.3s ease;
         }
-        
+
         .faq-answer.active {
             max-height: 200px;
         }
-        
+
         /* Mobile menu overlay */
         .mobile-menu-overlay {
             position: fixed;
@@ -226,11 +230,11 @@
             z-index: 998;
             display: none;
         }
-        
+
         .mobile-menu-overlay.active {
             display: block;
         }
-        
+
         /* Back to top arrow */
         .back-to-top::before {
             content: '';
@@ -240,7 +244,7 @@
             border-right: 8px solid transparent;
             border-bottom: 12px solid white;
         }
-        
+
         /* Performance optimizations */
         .service-card,
         .before-after-item,
@@ -248,8 +252,9 @@
         .credential-item {
             will-change: transform;
         }
-        
+
         @media (hover: none) and (pointer: coarse) {
+
             .service-card:hover,
             .before-after-item:hover,
             .interactive-btn:hover,
@@ -257,7 +262,7 @@
                 transform: none;
             }
         }
-        
+
         /* Utility classes for complex animations */
         .nav-link-hover::after {
             content: '';
@@ -270,11 +275,11 @@
             transition: width 0.3s ease;
             border-radius: 2px;
         }
-        
+
         .nav-link-hover:hover::after {
             width: 100%;
         }
-        
+
         .service-card-before::before {
             content: '';
             position: absolute;
@@ -286,11 +291,11 @@
             transform: scaleX(0);
             transition: transform 0.3s ease;
         }
-        
+
         .service-card-before:hover::before {
             transform: scaleX(1);
         }
-        
+
         /* Mobile menu item animations */
         .mobile-menu-item::before {
             content: '';
@@ -303,12 +308,12 @@
             transform: translateX(-10px);
             box-shadow: 0 1px 3px rgba(245, 39, 166, 0.3);
         }
-        
+
         .mobile-menu-item:hover::before {
             opacity: 1;
             transform: translateX(0);
         }
-        
+
         .mobile-menu-item::after {
             content: '';
             position: absolute;
@@ -320,11 +325,11 @@
             transform: scaleY(0);
             transition: transform 0.3s ease;
         }
-        
+
         .mobile-menu-item:hover::after {
             transform: scaleY(1);
         }
-        
+
         /* List item bullets */
         .custom-bullet::before {
             content: '';
@@ -340,74 +345,108 @@
         }
     </style>
 </head>
+
 <body class="font-sans leading-relaxed text-gray-800 bg-gradient-pink">
     <header class="bg-white backdrop-blur-15 fixed w-full top-0 z-50 shadow-header">
         <nav class="max-w-screen-2xl mx-auto px-5 lg:px-10 flex justify-between items-center py-4">
             <div class="text-3xl lg:text-4xl font-bold gradient-text flex items-center gap-2">
                 🎀 Janiaya Bethea
             </div>
-            
+
             <ul class="hidden md:flex list-none gap-8">
-                <li><a href="#home" class="nav-link-hover relative text-gray-800 font-semibold transition-all duration-200 py-2 hover:text-custom-pink hover:-translate-y-0.5">Home</a></li>
-                <li><a href="#about" class="nav-link-hover relative text-gray-800 font-semibold transition-all duration-200 py-2 hover:text-custom-pink hover:-translate-y-0.5">About</a></li>
-                <li><a href="#services" class="nav-link-hover relative text-gray-800 font-semibold transition-all duration-200 py-2 hover:text-custom-pink hover:-translate-y-0.5">Services</a></li>
-                <li><a href="#reviews" class="nav-link-hover relative text-gray-800 font-semibold transition-all duration-200 py-2 hover:text-custom-pink hover:-translate-y-0.5">Reviews</a></li>
-                <li><a href="#faq" class="nav-link-hover relative text-gray-800 font-semibold transition-all duration-200 py-2 hover:text-custom-pink hover:-translate-y-0.5">FAQ</a></li>
-                <li><a href="#contact" class="nav-link-hover relative text-gray-800 font-semibold transition-all duration-200 py-2 hover:text-custom-pink hover:-translate-y-0.5">Contact</a></li>
+                <li><a href="#home"
+                        class="nav-link-hover relative text-gray-800 font-semibold transition-all duration-200 py-2 hover:text-custom-pink hover:-translate-y-0.5">Home</a>
+                </li>
+                <li><a href="#about"
+                        class="nav-link-hover relative text-gray-800 font-semibold transition-all duration-200 py-2 hover:text-custom-pink hover:-translate-y-0.5">About</a>
+                </li>
+                <li><a href="#services"
+                        class="nav-link-hover relative text-gray-800 font-semibold transition-all duration-200 py-2 hover:text-custom-pink hover:-translate-y-0.5">Services</a>
+                </li>
+                <li><a href="#reviews"
+                        class="nav-link-hover relative text-gray-800 font-semibold transition-all duration-200 py-2 hover:text-custom-pink hover:-translate-y-0.5">Reviews</a>
+                </li>
+                <li><a href="#faq"
+                        class="nav-link-hover relative text-gray-800 font-semibold transition-all duration-200 py-2 hover:text-custom-pink hover:-translate-y-0.5">FAQ</a>
+                </li>
+                <li><a href="#contact"
+                        class="nav-link-hover relative text-gray-800 font-semibold transition-all duration-200 py-2 hover:text-custom-pink hover:-translate-y-0.5">Contact</a>
+                </li>
             </ul>
-            
-            <button class="md:hidden bg-gradient-pink-45 border-none text-white text-lg cursor-pointer w-11 h-11 rounded-lg transition-all duration-200 shadow-pink-sm z-50 hover:scale-105 hover:shadow-pink-md touch-manipulation" onclick="toggleMobileMenu()" ontouchend="event.preventDefault(); toggleMobileMenu();">☰</button>
-            
-            <button class="hidden md:flex bg-gradient-pink-45 text-white px-6 py-3 rounded-full font-bold transition-all duration-200 shadow-pink-sm items-center gap-2 hover:-translate-y-0.5 hover:shadow-pink-md touch-manipulation" onclick="openBookingModal()" ontouchend="event.preventDefault(); openBookingModal();">
+
+            <button
+                class="md:hidden mobile-menu-btn bg-gradient-pink-45 border-none text-white text-lg cursor-pointer w-11 h-11 rounded-lg transition-all duration-200 shadow-pink-sm z-50 hover:scale-105 hover:shadow-pink-md touch-manipulation"
+                aria-label="Toggle menu" aria-expanded="false">
+                ☰
+            </button>
+            <button
+                class="hidden md:flex bg-gradient-pink-45 text-white px-6 py-3 rounded-full font-bold transition-all duration-200 shadow-pink-sm items-center gap-2 hover:-translate-y-0.5 hover:shadow-pink-md touch-manipulation"
+                onclick="openBookingModal();">
                 🎀 Book Now
             </button>
-            
-            <div class="mobile-menu hidden md:hidden absolute top-full left-0 right-0 bg-white shadow-card z-50 rounded-b-2xl overflow-hidden animate-slideDown border-t-3 border-custom-pink-light mt-0.5 max-h-screen overflow-y-auto custom-scrollbar" id="mobileMenu">
+
+            <div class="mobile-menu hidden md:hidden absolute top-full left-0 right-0 bg-white shadow-card z-50 rounded-b-2xl overflow-hidden animate-slideDown border-t-3 border-custom-pink-light mt-0.5 max-h-screen overflow-y-auto custom-scrollbar"
+                id="mobileMenu">
                 <ul class="list-none p-0 m-0">
                     <li class="border-b border-custom-pink/8 transition-all duration-200 hover:bg-custom-pink/2">
-                        <a href="#home" onclick="closeMobileMenu()" class="mobile-menu-item flex items-center px-6 py-5 text-gray-800 no-underline font-semibold text-base transition-all duration-200 gap-3 min-h-12 relative hover:text-custom-pink hover:bg-gradient-to-r hover:from-custom-pink/5 hover:to-transparent hover:pl-7 hover:translate-x-0.5">Home</a>
+                        <a href="#home" onclick="closeMobileMenu()"
+                            class="mobile-menu-item flex items-center px-6 py-5 text-gray-800 no-underline font-semibold text-base transition-all duration-200 gap-3 min-h-12 relative hover:text-custom-pink hover:bg-gradient-to-r hover:from-custom-pink/5 hover:to-transparent hover:pl-7 hover:translate-x-0.5">Home</a>
                     </li>
                     <li class="border-b border-custom-pink/8 transition-all duration-200 hover:bg-custom-pink/2">
-                        <a href="#about" onclick="closeMobileMenu()" class="mobile-menu-item flex items-center px-6 py-5 text-gray-800 no-underline font-semibold text-base transition-all duration-200 gap-3 min-h-12 relative hover:text-custom-pink hover:bg-gradient-to-r hover:from-custom-pink/5 hover:to-transparent hover:pl-7 hover:translate-x-0.5">About</a>
+                        <a href="#about" onclick="closeMobileMenu()"
+                            class="mobile-menu-item flex items-center px-6 py-5 text-gray-800 no-underline font-semibold text-base transition-all duration-200 gap-3 min-h-12 relative hover:text-custom-pink hover:bg-gradient-to-r hover:from-custom-pink/5 hover:to-transparent hover:pl-7 hover:translate-x-0.5">About</a>
                     </li>
                     <li class="border-b border-custom-pink/8 transition-all duration-200 hover:bg-custom-pink/2">
-                        <a href="#services" onclick="closeMobileMenu()" class="mobile-menu-item flex items-center px-6 py-5 text-gray-800 no-underline font-semibold text-base transition-all duration-200 gap-3 min-h-12 relative hover:text-custom-pink hover:bg-gradient-to-r hover:from-custom-pink/5 hover:to-transparent hover:pl-7 hover:translate-x-0.5">Services</a>
+                        <a href="#services" onclick="closeMobileMenu()"
+                            class="mobile-menu-item flex items-center px-6 py-5 text-gray-800 no-underline font-semibold text-base transition-all duration-200 gap-3 min-h-12 relative hover:text-custom-pink hover:bg-gradient-to-r hover:from-custom-pink/5 hover:to-transparent hover:pl-7 hover:translate-x-0.5">Services</a>
                     </li>
                     <li class="border-b border-custom-pink/8 transition-all duration-200 hover:bg-custom-pink/2">
-                        <a href="#reviews" onclick="closeMobileMenu()" class="mobile-menu-item flex items-center px-6 py-5 text-gray-800 no-underline font-semibold text-base transition-all duration-200 gap-3 min-h-12 relative hover:text-custom-pink hover:bg-gradient-to-r hover:from-custom-pink/5 hover:to-transparent hover:pl-7 hover:translate-x-0.5">Reviews</a>
+                        <a href="#reviews" onclick="closeMobileMenu()"
+                            class="mobile-menu-item flex items-center px-6 py-5 text-gray-800 no-underline font-semibold text-base transition-all duration-200 gap-3 min-h-12 relative hover:text-custom-pink hover:bg-gradient-to-r hover:from-custom-pink/5 hover:to-transparent hover:pl-7 hover:translate-x-0.5">Reviews</a>
                     </li>
                     <li class="border-b border-custom-pink/8 transition-all duration-200 hover:bg-custom-pink/2">
-                        <a href="#faq" onclick="closeMobileMenu()" class="mobile-menu-item flex items-center px-6 py-5 text-gray-800 no-underline font-semibold text-base transition-all duration-200 gap-3 min-h-12 relative hover:text-custom-pink hover:bg-gradient-to-r hover:from-custom-pink/5 hover:to-transparent hover:pl-7 hover:translate-x-0.5">FAQ</a>
+                        <a href="#faq" onclick="closeMobileMenu()"
+                            class="mobile-menu-item flex items-center px-6 py-5 text-gray-800 no-underline font-semibold text-base transition-all duration-200 gap-3 min-h-12 relative hover:text-custom-pink hover:bg-gradient-to-r hover:from-custom-pink/5 hover:to-transparent hover:pl-7 hover:translate-x-0.5">FAQ</a>
                     </li>
                     <li class="border-b border-custom-pink/8 transition-all duration-200 hover:bg-custom-pink/2">
-                        <a href="#contact" onclick="closeMobileMenu()" class="mobile-menu-item flex items-center px-6 py-5 text-gray-800 no-underline font-semibold text-base transition-all duration-200 gap-3 min-h-12 relative hover:text-custom-pink hover:bg-gradient-to-r hover:from-custom-pink/5 hover:to-transparent hover:pl-7 hover:translate-x-0.5">Contact</a>
+                        <a href="#contact" onclick="closeMobileMenu()"
+                            class="mobile-menu-item flex items-center px-6 py-5 text-gray-800 no-underline font-semibold text-base transition-all duration-200 gap-3 min-h-12 relative hover:text-custom-pink hover:bg-gradient-to-r hover:from-custom-pink/5 hover:to-transparent hover:pl-7 hover:translate-x-0.5">Contact</a>
                     </li>
                     <li>
-                        <a href="#book" onclick="closeMobileMenu(); openBookingModal();" class="bg-gradient-pink-45 text-white mx-2 my-2 rounded-3xl text-center block py-4 px-6 font-semibold">🎀 Book Now</a>
+                        <a href="#book" onclick="closeMobileMenu(); openBookingModal();"
+                            class="bg-gradient-pink-45 text-white mx-2 my-2 rounded-3xl text-center block py-4 px-6 font-semibold">🎀
+                            Book Now</a>
                     </li>
                 </ul>
             </div>
         </nav>
     </header>
 
-    <section id="home" class="h-screen flex items-center justify-center text-center text-white relative overflow-hidden min-h-[600px] md:min-h-[500px] lg:min-h-[600px] pt-20 md:pt-28 lg:pt-36 pb-16 md:pb-20 lg:pb-24">
+    <section id="home"
+        class="h-screen flex items-center justify-center text-center text-white relative overflow-hidden min-h-[600px] md:min-h-[500px] lg:min-h-[600px] pt-20 md:pt-28 lg:pt-36 pb-16 md:pb-20 lg:pb-24">
         <div class="absolute inset-0 bg-gradient-hero-overlay z-10"></div>
         <div class="relative z-20 animate-fadeInUp max-w-4xl px-5">
-            <h1 class="text-4xl md:text-5xl lg:text-6xl xl:text-7xl mb-4 md:mb-6 text-white font-bold flex items-center justify-center flex-wrap gap-4 drop-shadow-lg">
+            <h1
+                class="text-4xl md:text-5xl lg:text-6xl xl:text-7xl mb-4 md:mb-6 text-white font-bold flex items-center justify-center flex-wrap gap-4 drop-shadow-lg">
                 Beautiful Hair Braiding 🎀
             </h1>
-            <p class="text-lg md:text-xl lg:text-2xl mb-2 md:mb-4 text-gray-800 font-semibold flex items-center justify-center flex-wrap gap-2 drop-shadow-sm">
+            <p
+                class="text-lg md:text-xl lg:text-2xl mb-2 md:mb-4 text-gray-800 font-semibold flex items-center justify-center flex-wrap gap-2 drop-shadow-sm">
                 Professional Natural Hair Specialist 🎀
             </p>
-            <p class="text-base md:text-lg lg:text-xl mb-8 md:mb-12 text-gray-600 font-medium max-w-2xl mx-auto drop-shadow-sm">
+            <p
+                class="text-base md:text-lg lg:text-xl mb-8 md:mb-12 text-gray-600 font-medium max-w-2xl mx-auto drop-shadow-sm">
                 Expert braiding services that celebrate and protect your natural beauty
             </p>
-            
+
             <div class="flex flex-col md:flex-row gap-4 md:gap-6 justify-center items-center mt-8">
-                <a href="#book" class="w-full md:w-auto inline-flex items-center justify-center gap-2 px-8 md:px-12 py-4 md:py-5 bg-gradient-pink-45 text-white no-underline rounded-full font-bold text-base md:text-lg transition-all duration-200 shadow-pink-lg min-h-14 md:min-h-16 hover:-translate-y-0.5 hover:shadow-pink-xl touch-manipulation" onclick="openBookingModal()" ontouchend="event.preventDefault(); openBookingModal();">
+                <a href="#book"
+                    class="w-full md:w-auto inline-flex items-center justify-center gap-2 px-8 md:px-12 py-4 md:py-5 bg-gradient-pink-45 text-white no-underline rounded-full font-bold text-base md:text-lg transition-all duration-200 shadow-pink-lg min-h-14 md:min-h-16 hover:-translate-y-0.5 hover:shadow-pink-xl touch-manipulation"
+                    onclick="openBookingModal()"  openBookingModal();">
                     🎀 Book Your Appointment
                 </a>
-                <a href="#before-after" class="w-full md:w-auto inline-flex items-center justify-center gap-2 px-8 md:px-12 py-4 md:py-5 bg-white/20 border-3 border-black text-gray-800 no-underline rounded-full font-bold text-base md:text-lg transition-all duration-200 backdrop-blur-sm min-h-14 md:min-h-16 hover:bg-white/30 hover:border-gray-800 hover:text-black touch-manipulation">
+                <a href="#before-after"
+                    class="w-full md:w-auto inline-flex items-center justify-center gap-2 px-8 md:px-12 py-4 md:py-5 bg-white/20 border-3 border-black text-gray-800 no-underline rounded-full font-bold text-base md:text-lg transition-all duration-200 backdrop-blur-sm min-h-14 md:min-h-16 hover:bg-white/30 hover:border-gray-800 hover:text-black touch-manipulation">
                     🎀 View Portfolio
                 </a>
             </div>
@@ -418,22 +457,24 @@
 
     <section id="about" class="py-24 md:py-28 lg:py-32 relative bg-white/95 backdrop-blur-sm">
         <div class="max-w-screen-2xl mx-auto px-5 lg:px-10">
-            <h2 class="text-center text-4xl md:text-5xl lg:text-6xl mb-4 md:mb-6 gradient-text font-bold flex items-center justify-center flex-wrap gap-4">
+            <h2
+                class="text-center text-4xl md:text-5xl lg:text-6xl mb-4 md:mb-6 gradient-text font-bold flex items-center justify-center flex-wrap gap-4">
                 About Janiaya 🎀
             </h2>
             <p class="text-center text-lg md:text-xl text-gray-600 mb-16 md:mb-20 max-w-3xl mx-auto">
                 Passionate hair braiding specialist dedicated to enhancing your natural beauty
             </p>
-            
+
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center mt-12">
                 <div class="text-lg md:text-xl leading-relaxed space-y-6">
                     <div>
                         <h3 class="text-custom-pink mb-4 text-xl md:text-2xl font-semibold flex items-center gap-2">
                             🎀 My Story
                         </h3>
-                        <p>[Add your personal journey into hair braiding - what inspired you to start, your training, passion for natural hair care, etc.]</p>
+                        <p>[Add your personal journey into hair braiding - what inspired you to start, your training,
+                            passion for natural hair care, etc.]</p>
                     </div>
-                    
+
                     <div>
                         <h3 class="text-custom-pink mb-4 text-xl md:text-2xl font-semibold flex items-center gap-2">
                             🎀 My Specialties
@@ -446,36 +487,44 @@
                             <li class="py-2 pl-8 relative custom-bullet">All Hair Types & Textures Welcome</li>
                         </ul>
                     </div>
-                    
+
                     <div>
                         <h3 class="text-custom-pink mb-4 text-xl md:text-2xl font-semibold flex items-center gap-2">
                             🎀 My Promise
                         </h3>
-                        <p>Every client leaves feeling beautiful, confident, and with healthy hair that's been treated with care and expertise.</p>
+                        <p>Every client leaves feeling beautiful, confident, and with healthy hair that's been treated
+                            with care and expertise.</p>
                     </div>
                 </div>
-                
-                <div class="bg-gradient-pink-45 rounded-2xl lg:rounded-3xl h-80 md:h-96 lg:h-128 flex items-center justify-center text-white text-lg md:text-xl text-center shadow-card">
+
+                <div
+                    class="bg-gradient-pink-45 rounded-2xl lg:rounded-3xl h-80 md:h-96 lg:h-128 flex items-center justify-center text-white text-lg md:text-xl text-center shadow-card">
                     [Your Professional Photo Here]<br>
                     Professional Hair Braiding Specialist
                 </div>
             </div>
-            
+
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mt-12 lg:mt-16">
-                <div class="text-center p-6 md:p-8 bg-white rounded-2xl shadow-card transition-transform duration-200 border-t-4 border-custom-pink-light hover:-translate-y-0.5">
-                    <h4 class="text-custom-pink mb-4 text-lg md:text-xl font-semibold flex items-center justify-center gap-2">
+                <div
+                    class="text-center p-6 md:p-8 bg-white rounded-2xl shadow-card transition-transform duration-200 border-t-4 border-custom-pink-light hover:-translate-y-0.5">
+                    <h4
+                        class="text-custom-pink mb-4 text-lg md:text-xl font-semibold flex items-center justify-center gap-2">
                         🎀 Certified Braiding Specialist
                     </h4>
                     <p>[Add your certification details]</p>
                 </div>
-                <div class="text-center p-6 md:p-8 bg-white rounded-2xl shadow-card transition-transform duration-200 border-t-4 border-custom-pink-light hover:-translate-y-0.5">
-                    <h4 class="text-custom-pink mb-4 text-lg md:text-xl font-semibold flex items-center justify-center gap-2">
+                <div
+                    class="text-center p-6 md:p-8 bg-white rounded-2xl shadow-card transition-transform duration-200 border-t-4 border-custom-pink-light hover:-translate-y-0.5">
+                    <h4
+                        class="text-custom-pink mb-4 text-lg md:text-xl font-semibold flex items-center justify-center gap-2">
                         🎀 Natural Hair Expert
                     </h4>
                     <p>Specialized training in natural hair care</p>
                 </div>
-                <div class="text-center p-6 md:p-8 bg-white rounded-2xl shadow-card transition-transform duration-200 border-t-4 border-custom-pink-light hover:-translate-y-0.5 md:col-span-2 lg:col-span-1">
-                    <h4 class="text-custom-pink mb-4 text-lg md:text-xl font-semibold flex items-center justify-center gap-2">
+                <div
+                    class="text-center p-6 md:p-8 bg-white rounded-2xl shadow-card transition-transform duration-200 border-t-4 border-custom-pink-light hover:-translate-y-0.5 md:col-span-2 lg:col-span-1">
+                    <h4
+                        class="text-custom-pink mb-4 text-lg md:text-xl font-semibold flex items-center justify-center gap-2">
                         🎀 Custom Design Artist
                     </h4>
                     <p>Creating unique styles for each client</p>
@@ -488,101 +537,135 @@
 
     <section id="services" class="py-24 md:py-28 lg:py-32 relative bg-pink-50/95 backdrop-blur-sm">
         <div class="max-w-screen-2xl mx-auto px-5 lg:px-10">
-            <h2 class="text-center text-4xl md:text-5xl lg:text-6xl mb-4 md:mb-6 gradient-text font-bold flex items-center justify-center flex-wrap gap-4">
+            <h2
+                class="text-center text-4xl md:text-5xl lg:text-6xl mb-4 md:mb-6 gradient-text font-bold flex items-center justify-center flex-wrap gap-4">
                 Professional Services 🎀
             </h2>
             <p class="text-center text-lg md:text-xl text-gray-600 mb-16 md:mb-20 max-w-3xl mx-auto">
                 Expert braiding and protective styling services for all hair types
             </p>
-            
+
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mt-16">
-                <div class="service-card-before bg-white p-8 md:p-10 lg:p-12 rounded-2xl lg:rounded-3xl shadow-card transition-all duration-200 cursor-pointer relative overflow-hidden border-t-4 border-custom-pink-light hover:-translate-y-1 hover:shadow-card-hover" onclick="showServiceDetails('box-braids')">
-                    <div class="w-16 h-16 md:w-20 md:h-20 bg-gradient-pink-45 rounded-2xl flex items-center justify-center mb-6 text-white text-3xl md:text-4xl">🎀</div>
+                <div class="service-card-before bg-white p-8 md:p-10 lg:p-12 rounded-2xl lg:rounded-3xl shadow-card transition-all duration-200 cursor-pointer relative overflow-hidden border-t-4 border-custom-pink-light hover:-translate-y-1 hover:shadow-card-hover"
+                    onclick="showServiceDetails('box-braids')">
+                    <div
+                        class="w-16 h-16 md:w-20 md:h-20 bg-gradient-pink-45 rounded-2xl flex items-center justify-center mb-6 text-white text-3xl md:text-4xl">
+                        🎀</div>
                     <h3 class="text-custom-pink mb-4 text-xl md:text-2xl font-semibold flex items-center gap-2">
                         Box Braids 🎀
                     </h3>
-                    <p class="text-base md:text-lg mb-6">Classic protective style perfect for low maintenance and versatility. Available in various sizes from micro to jumbo.</p>
+                    <p class="text-base md:text-lg mb-6">Classic protective style perfect for low maintenance and
+                        versatility. Available in various sizes from micro to jumbo.</p>
                     <div class="space-y-2">
                         <div class="text-gray-600 text-sm md:text-base">⏱️ Duration: 4-8 hours</div>
                         <div class="text-gray-600 text-sm md:text-base">💝 Lasts: 6-8 weeks</div>
                         <div class="text-gray-600 text-sm md:text-base">✨ Hair Type: All textures</div>
-                        <div class="text-custom-pink text-lg md:text-xl font-bold mt-4" id="box-braids-price">Starting at $[Your Price]</div>
+                        <div class="text-custom-pink text-lg md:text-xl font-bold mt-4" id="box-braids-price">Starting
+                            at $[Your Price]</div>
                     </div>
                 </div>
-                
-                <div class="service-card-before bg-white p-8 md:p-10 lg:p-12 rounded-2xl lg:rounded-3xl shadow-card transition-all duration-200 cursor-pointer relative overflow-hidden border-t-4 border-custom-pink-light hover:-translate-y-1 hover:shadow-card-hover" onclick="showServiceDetails('cornrows')">
-                    <div class="w-16 h-16 md:w-20 md:h-20 bg-gradient-pink-45 rounded-2xl flex items-center justify-center mb-6 text-white text-3xl md:text-4xl">🌾</div>
+
+                <div class="service-card-before bg-white p-8 md:p-10 lg:p-12 rounded-2xl lg:rounded-3xl shadow-card transition-all duration-200 cursor-pointer relative overflow-hidden border-t-4 border-custom-pink-light hover:-translate-y-1 hover:shadow-card-hover"
+                    onclick="showServiceDetails('cornrows')">
+                    <div
+                        class="w-16 h-16 md:w-20 md:h-20 bg-gradient-pink-45 rounded-2xl flex items-center justify-center mb-6 text-white text-3xl md:text-4xl">
+                        🌾</div>
                     <h3 class="text-custom-pink mb-4 text-xl md:text-2xl font-semibold flex items-center gap-2">
                         Cornrows 🎀
                     </h3>
-                    <p class="text-base md:text-lg mb-6">Traditional braiding style with endless pattern possibilities. From simple straight-backs to intricate geometric designs.</p>
+                    <p class="text-base md:text-lg mb-6">Traditional braiding style with endless pattern possibilities.
+                        From simple straight-backs to intricate geometric designs.</p>
                     <div class="space-y-2">
                         <div class="text-gray-600 text-sm md:text-base">⏱️ Duration: 2-4 hours</div>
                         <div class="text-gray-600 text-sm md:text-base">💝 Lasts: 2-4 weeks</div>
                         <div class="text-gray-600 text-sm md:text-base">✨ Hair Type: Natural hair</div>
-                        <div class="text-custom-pink text-lg md:text-xl font-bold mt-4" id="cornrows-price">Starting at $[Your Price]</div>
+                        <div class="text-custom-pink text-lg md:text-xl font-bold mt-4" id="cornrows-price">Starting at
+                            $[Your Price]</div>
                     </div>
                 </div>
-                
-                <div class="service-card-before bg-white p-8 md:p-10 lg:p-12 rounded-2xl lg:rounded-3xl shadow-card transition-all duration-200 cursor-pointer relative overflow-hidden border-t-4 border-custom-pink-light hover:-translate-y-1 hover:shadow-card-hover" onclick="showServiceDetails('goddess-braids')">
-                    <div class="w-16 h-16 md:w-20 md:h-20 bg-gradient-pink-45 rounded-2xl flex items-center justify-center mb-6 text-white text-3xl md:text-4xl">👑</div>
+
+                <div class="service-card-before bg-white p-8 md:p-10 lg:p-12 rounded-2xl lg:rounded-3xl shadow-card transition-all duration-200 cursor-pointer relative overflow-hidden border-t-4 border-custom-pink-light hover:-translate-y-1 hover:shadow-card-hover"
+                    onclick="showServiceDetails('goddess-braids')">
+                    <div
+                        class="w-16 h-16 md:w-20 md:h-20 bg-gradient-pink-45 rounded-2xl flex items-center justify-center mb-6 text-white text-3xl md:text-4xl">
+                        👑</div>
                     <h3 class="text-custom-pink mb-4 text-xl md:text-2xl font-semibold flex items-center gap-2">
                         Goddess Braids 🎀
                     </h3>
-                    <p class="text-base md:text-lg mb-6">Elegant, larger braids that make a statement. Perfect for special occasions or when you want a regal look.</p>
+                    <p class="text-base md:text-lg mb-6">Elegant, larger braids that make a statement. Perfect for
+                        special occasions or when you want a regal look.</p>
                     <div class="space-y-2">
                         <div class="text-gray-600 text-sm md:text-base">⏱️ Duration: 3-5 hours</div>
                         <div class="text-gray-600 text-sm md:text-base">💝 Lasts: 4-6 weeks</div>
                         <div class="text-gray-600 text-sm md:text-base">✨ Hair Type: All textures</div>
-                        <div class="text-custom-pink text-lg md:text-xl font-bold mt-4" id="goddess-braids-price">Starting at $[Your Price]</div>
+                        <div class="text-custom-pink text-lg md:text-xl font-bold mt-4" id="goddess-braids-price">
+                            Starting at $[Your Price]</div>
                     </div>
                 </div>
-                
-                <div class="service-card-before bg-white p-8 md:p-10 lg:p-12 rounded-2xl lg:rounded-3xl shadow-card transition-all duration-200 cursor-pointer relative overflow-hidden border-t-4 border-custom-pink-light hover:-translate-y-1 hover:shadow-card-hover" onclick="showServiceDetails('knotless-braids')">
-                    <div class="w-16 h-16 md:w-20 md:h-20 bg-gradient-pink-45 rounded-2xl flex items-center justify-center mb-6 text-white text-3xl md:text-4xl">🌟</div>
+
+                <div class="service-card-before bg-white p-8 md:p-10 lg:p-12 rounded-2xl lg:rounded-3xl shadow-card transition-all duration-200 cursor-pointer relative overflow-hidden border-t-4 border-custom-pink-light hover:-translate-y-1 hover:shadow-card-hover"
+                    onclick="showServiceDetails('knotless-braids')">
+                    <div
+                        class="w-16 h-16 md:w-20 md:h-20 bg-gradient-pink-45 rounded-2xl flex items-center justify-center mb-6 text-white text-3xl md:text-4xl">
+                        🌟</div>
                     <h3 class="text-custom-pink mb-4 text-xl md:text-2xl font-semibold flex items-center gap-2">
                         Knotless Braids 🎀
                     </h3>
-                    <p class="text-base md:text-lg mb-6">Modern braiding technique that's gentler on edges and more comfortable. Natural-looking with less tension.</p>
+                    <p class="text-base md:text-lg mb-6">Modern braiding technique that's gentler on edges and more
+                        comfortable. Natural-looking with less tension.</p>
                     <div class="space-y-2">
                         <div class="text-gray-600 text-sm md:text-base">⏱️ Duration: 6-10 hours</div>
                         <div class="text-gray-600 text-sm md:text-base">💝 Lasts: 6-8 weeks</div>
                         <div class="text-gray-600 text-sm md:text-base">✨ Hair Type: All textures</div>
-                        <div class="text-custom-pink text-lg md:text-xl font-bold mt-4" id="knotless-braids-price">Starting at $[Your Price]</div>
+                        <div class="text-custom-pink text-lg md:text-xl font-bold mt-4" id="knotless-braids-price">
+                            Starting at $[Your Price]</div>
                     </div>
                 </div>
-                
-                <div class="service-card-before bg-white p-8 md:p-10 lg:p-12 rounded-2xl lg:rounded-3xl shadow-card transition-all duration-200 cursor-pointer relative overflow-hidden border-t-4 border-custom-pink-light hover:-translate-y-1 hover:shadow-card-hover" onclick="showServiceDetails('twist-styles')">
-                    <div class="w-16 h-16 md:w-20 md:h-20 bg-gradient-pink-45 rounded-2xl flex items-center justify-center mb-6 text-white text-3xl md:text-4xl">🌀</div>
+
+                <div class="service-card-before bg-white p-8 md:p-10 lg:p-12 rounded-2xl lg:rounded-3xl shadow-card transition-all duration-200 cursor-pointer relative overflow-hidden border-t-4 border-custom-pink-light hover:-translate-y-1 hover:shadow-card-hover"
+                    onclick="showServiceDetails('twist-styles')">
+                    <div
+                        class="w-16 h-16 md:w-20 md:h-20 bg-gradient-pink-45 rounded-2xl flex items-center justify-center mb-6 text-white text-3xl md:text-4xl">
+                        🌀</div>
                     <h3 class="text-custom-pink mb-4 text-xl md:text-2xl font-semibold flex items-center gap-2">
                         Twist Styles 🎀
                     </h3>
-                    <p class="text-base md:text-lg mb-6">Beautiful two-strand twists, passion twists, and spring twists. Lightweight and natural-looking protective styles.</p>
+                    <p class="text-base md:text-lg mb-6">Beautiful two-strand twists, passion twists, and spring twists.
+                        Lightweight and natural-looking protective styles.</p>
                     <div class="space-y-2">
                         <div class="text-gray-600 text-sm md:text-base">⏱️ Duration: 4-7 hours</div>
                         <div class="text-gray-600 text-sm md:text-base">💝 Lasts: 6-10 weeks</div>
                         <div class="text-gray-600 text-sm md:text-base">✨ Hair Type: All textures</div>
-                        <div class="text-custom-pink text-lg md:text-xl font-bold mt-4" id="twist-styles-price">Starting at $[Your Price]</div>
+                        <div class="text-custom-pink text-lg md:text-xl font-bold mt-4" id="twist-styles-price">Starting
+                            at $[Your Price]</div>
                     </div>
                 </div>
-                
-                <div class="service-card-before bg-white p-8 md:p-10 lg:p-12 rounded-2xl lg:rounded-3xl shadow-card transition-all duration-200 cursor-pointer relative overflow-hidden border-t-4 border-custom-pink-light hover:-translate-y-1 hover:shadow-card-hover" onclick="showServiceDetails('consultation')">
-                    <div class="w-16 h-16 md:w-20 md:h-20 bg-gradient-pink-45 rounded-2xl flex items-center justify-center mb-6 text-white text-3xl md:text-4xl">💆‍♀️</div>
+
+                <div class="service-card-before bg-white p-8 md:p-10 lg:p-12 rounded-2xl lg:rounded-3xl shadow-card transition-all duration-200 cursor-pointer relative overflow-hidden border-t-4 border-custom-pink-light hover:-translate-y-1 hover:shadow-card-hover"
+                    onclick="showServiceDetails('consultation')">
+                    <div
+                        class="w-16 h-16 md:w-20 md:h-20 bg-gradient-pink-45 rounded-2xl flex items-center justify-center mb-6 text-white text-3xl md:text-4xl">
+                        💆‍♀️</div>
                     <h3 class="text-custom-pink mb-4 text-xl md:text-2xl font-semibold flex items-center gap-2">
                         Hair Consultation 🎀
                     </h3>
-                    <p class="text-base md:text-lg mb-6">Personalized hair health assessment, style recommendations, and maintenance guidance for your natural hair journey.</p>
+                    <p class="text-base md:text-lg mb-6">Personalized hair health assessment, style recommendations, and
+                        maintenance guidance for your natural hair journey.</p>
                     <div class="space-y-2">
                         <div class="text-gray-600 text-sm md:text-base">⏱️ Duration: 30-60 minutes</div>
-                        <div class="text-gray-600 text-sm md:text-base">💝 Includes: Care plan & product recommendations</div>
+                        <div class="text-gray-600 text-sm md:text-base">💝 Includes: Care plan & product recommendations
+                        </div>
                         <div class="text-gray-600 text-sm md:text-base">✨ Perfect for: New clients & hair health</div>
-                        <div class="text-custom-pink text-lg md:text-xl font-bold mt-4" id="consultation-price">$[Your Price]</div>
+                        <div class="text-custom-pink text-lg md:text-xl font-bold mt-4" id="consultation-price">$[Your
+                            Price]</div>
                     </div>
                 </div>
             </div>
-            
+
             <div class="text-center mt-12 lg:mt-16">
-                <button class="bg-gradient-pink-45 border-none text-white px-8 py-4 rounded-full cursor-pointer transition-all duration-200 text-base md:text-lg font-bold shadow-pink-sm inline-flex items-center gap-2 min-h-14 hover:-translate-y-0.5 hover:shadow-pink-lg touch-manipulation" onclick="openBookingModal()" ontouchend="event.preventDefault(); openBookingModal();">
+                <button
+                    class="bg-gradient-pink-45 border-none text-white px-8 py-4 rounded-full cursor-pointer transition-all duration-200 text-base md:text-lg font-bold shadow-pink-sm inline-flex items-center gap-2 min-h-14 hover:-translate-y-0.5 hover:shadow-pink-lg touch-manipulation"
+                    onclick="openBookingModal()"  openBookingModal();">
                     🎀 Book Your Service
                 </button>
             </div>
@@ -593,93 +676,130 @@
 
     <section id="before-after" class="py-24 md:py-28 lg:py-32 relative bg-white/95 backdrop-blur-sm">
         <div class="max-w-screen-2xl mx-auto px-5 lg:px-10">
-            <h2 class="text-center text-4xl md:text-5xl lg:text-6xl mb-4 md:mb-6 gradient-text font-bold flex items-center justify-center flex-wrap gap-4">
+            <h2
+                class="text-center text-4xl md:text-5xl lg:text-6xl mb-4 md:mb-6 gradient-text font-bold flex items-center justify-center flex-wrap gap-4">
                 Before & After Gallery 🎀
             </h2>
             <p class="text-center text-lg md:text-xl text-gray-600 mb-16 md:mb-20 max-w-3xl mx-auto">
                 See the stunning transformations and beautiful braiding work
             </p>
-            
+
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mt-16">
-                <div class="bg-white rounded-2xl lg:rounded-3xl overflow-hidden shadow-card transition-transform duration-200 border-t-4 border-custom-pink-light hover:scale-102">
+                <div
+                    class="bg-white rounded-2xl lg:rounded-3xl overflow-hidden shadow-card transition-transform duration-200 border-t-4 border-custom-pink-light hover:scale-102">
                     <div class="grid grid-cols-2 h-48 md:h-56">
-                        <div class="bg-gradient-pink-45 flex items-center justify-center text-white font-bold text-lg md:text-xl">BEFORE</div>
-                        <div class="bg-gradient-to-r from-custom-pink-light to-white flex items-center justify-center text-custom-pink font-bold text-lg md:text-xl">AFTER</div>
+                        <div
+                            class="bg-gradient-pink-45 flex items-center justify-center text-white font-bold text-lg md:text-xl">
+                            BEFORE</div>
+                        <div
+                            class="bg-gradient-to-r from-custom-pink-light to-white flex items-center justify-center text-custom-pink font-bold text-lg md:text-xl">
+                            AFTER</div>
                     </div>
                     <div class="p-6 text-center">
-                        <h4 class="text-custom-pink mb-2 text-lg md:text-xl font-semibold flex items-center justify-center gap-2">
+                        <h4
+                            class="text-custom-pink mb-2 text-lg md:text-xl font-semibold flex items-center justify-center gap-2">
                             🎀 Box Braids Transformation
                         </h4>
                         <p>Medium box braids with 18" length</p>
                     </div>
                 </div>
-                
-                <div class="bg-white rounded-2xl lg:rounded-3xl overflow-hidden shadow-card transition-transform duration-200 border-t-4 border-custom-pink-light hover:scale-102">
+
+                <div
+                    class="bg-white rounded-2xl lg:rounded-3xl overflow-hidden shadow-card transition-transform duration-200 border-t-4 border-custom-pink-light hover:scale-102">
                     <div class="grid grid-cols-2 h-48 md:h-56">
-                        <div class="bg-gradient-pink-45 flex items-center justify-center text-white font-bold text-lg md:text-xl">BEFORE</div>
-                        <div class="bg-gradient-to-r from-custom-pink-light to-white flex items-center justify-center text-custom-pink font-bold text-lg md:text-xl">AFTER</div>
+                        <div
+                            class="bg-gradient-pink-45 flex items-center justify-center text-white font-bold text-lg md:text-xl">
+                            BEFORE</div>
+                        <div
+                            class="bg-gradient-to-r from-custom-pink-light to-white flex items-center justify-center text-custom-pink font-bold text-lg md:text-xl">
+                            AFTER</div>
                     </div>
                     <div class="p-6 text-center">
-                        <h4 class="text-custom-pink mb-2 text-lg md:text-xl font-semibold flex items-center justify-center gap-2">
+                        <h4
+                            class="text-custom-pink mb-2 text-lg md:text-xl font-semibold flex items-center justify-center gap-2">
                             🎀 Goddess Braids Style
                         </h4>
                         <p>Elegant goddess braids with intricate parting</p>
                     </div>
                 </div>
-                
-                <div class="bg-white rounded-2xl lg:rounded-3xl overflow-hidden shadow-card transition-transform duration-200 border-t-4 border-custom-pink-light hover:scale-102">
+
+                <div
+                    class="bg-white rounded-2xl lg:rounded-3xl overflow-hidden shadow-card transition-transform duration-200 border-t-4 border-custom-pink-light hover:scale-102">
                     <div class="grid grid-cols-2 h-48 md:h-56">
-                        <div class="bg-gradient-pink-45 flex items-center justify-center text-white font-bold text-lg md:text-xl">BEFORE</div>
-                        <div class="bg-gradient-to-r from-custom-pink-light to-white flex items-center justify-center text-custom-pink font-bold text-lg md:text-xl">AFTER</div>
+                        <div
+                            class="bg-gradient-pink-45 flex items-center justify-center text-white font-bold text-lg md:text-xl">
+                            BEFORE</div>
+                        <div
+                            class="bg-gradient-to-r from-custom-pink-light to-white flex items-center justify-center text-custom-pink font-bold text-lg md:text-xl">
+                            AFTER</div>
                     </div>
                     <div class="p-6 text-center">
-                        <h4 class="text-custom-pink mb-2 text-lg md:text-xl font-semibold flex items-center justify-center gap-2">
+                        <h4
+                            class="text-custom-pink mb-2 text-lg md:text-xl font-semibold flex items-center justify-center gap-2">
                             🎀 Knotless Braids
                         </h4>
                         <p>Small knotless braids for natural look</p>
                     </div>
                 </div>
-                
-                <div class="bg-white rounded-2xl lg:rounded-3xl overflow-hidden shadow-card transition-transform duration-200 border-t-4 border-custom-pink-light hover:scale-102">
+
+                <div
+                    class="bg-white rounded-2xl lg:rounded-3xl overflow-hidden shadow-card transition-transform duration-200 border-t-4 border-custom-pink-light hover:scale-102">
                     <div class="grid grid-cols-2 h-48 md:h-56">
-                        <div class="bg-gradient-pink-45 flex items-center justify-center text-white font-bold text-lg md:text-xl">BEFORE</div>
-                        <div class="bg-gradient-to-r from-custom-pink-light to-white flex items-center justify-center text-custom-pink font-bold text-lg md:text-xl">AFTER</div>
+                        <div
+                            class="bg-gradient-pink-45 flex items-center justify-center text-white font-bold text-lg md:text-xl">
+                            BEFORE</div>
+                        <div
+                            class="bg-gradient-to-r from-custom-pink-light to-white flex items-center justify-center text-custom-pink font-bold text-lg md:text-xl">
+                            AFTER</div>
                     </div>
                     <div class="p-6 text-center">
-                        <h4 class="text-custom-pink mb-2 text-lg md:text-xl font-semibold flex items-center justify-center gap-2">
+                        <h4
+                            class="text-custom-pink mb-2 text-lg md:text-xl font-semibold flex items-center justify-center gap-2">
                             🎀 Cornrow Design
                         </h4>
                         <p>Geometric cornrow pattern with feed-ins</p>
                     </div>
                 </div>
-                
-                <div class="bg-white rounded-2xl lg:rounded-3xl overflow-hidden shadow-card transition-transform duration-200 border-t-4 border-custom-pink-light hover:scale-102">
+
+                <div
+                    class="bg-white rounded-2xl lg:rounded-3xl overflow-hidden shadow-card transition-transform duration-200 border-t-4 border-custom-pink-light hover:scale-102">
                     <div class="grid grid-cols-2 h-48 md:h-56">
-                        <div class="bg-gradient-pink-45 flex items-center justify-center text-white font-bold text-lg md:text-xl">BEFORE</div>
-                        <div class="bg-gradient-to-r from-custom-pink-light to-white flex items-center justify-center text-custom-pink font-bold text-lg md:text-xl">AFTER</div>
+                        <div
+                            class="bg-gradient-pink-45 flex items-center justify-center text-white font-bold text-lg md:text-xl">
+                            BEFORE</div>
+                        <div
+                            class="bg-gradient-to-r from-custom-pink-light to-white flex items-center justify-center text-custom-pink font-bold text-lg md:text-xl">
+                            AFTER</div>
                     </div>
                     <div class="p-6 text-center">
-                        <h4 class="text-custom-pink mb-2 text-lg md:text-xl font-semibold flex items-center justify-center gap-2">
+                        <h4
+                            class="text-custom-pink mb-2 text-lg md:text-xl font-semibold flex items-center justify-center gap-2">
                             🎀 Passion Twists
                         </h4>
                         <p>Beautiful bohemian passion twists</p>
                     </div>
                 </div>
-                
-                <div class="bg-white rounded-2xl lg:rounded-3xl overflow-hidden shadow-card transition-transform duration-200 border-t-4 border-custom-pink-light hover:scale-102">
+
+                <div
+                    class="bg-white rounded-2xl lg:rounded-3xl overflow-hidden shadow-card transition-transform duration-200 border-t-4 border-custom-pink-light hover:scale-102">
                     <div class="grid grid-cols-2 h-48 md:h-56">
-                        <div class="bg-gradient-pink-45 flex items-center justify-center text-white font-bold text-lg md:text-xl">BEFORE</div>
-                        <div class="bg-gradient-to-r from-custom-pink-light to-white flex items-center justify-center text-custom-pink font-bold text-lg md:text-xl">AFTER</div>
+                        <div
+                            class="bg-gradient-pink-45 flex items-center justify-center text-white font-bold text-lg md:text-xl">
+                            BEFORE</div>
+                        <div
+                            class="bg-gradient-to-r from-custom-pink-light to-white flex items-center justify-center text-custom-pink font-bold text-lg md:text-xl">
+                            AFTER</div>
                     </div>
                     <div class="p-6 text-center">
-                        <h4 class="text-custom-pink mb-2 text-lg md:text-xl font-semibold flex items-center justify-center gap-2">
+                        <h4
+                            class="text-custom-pink mb-2 text-lg md:text-xl font-semibold flex items-center justify-center gap-2">
                             🎀 Protective Updo
                         </h4>
                         <p>Elegant braided updo for special occasion</p>
                     </div>
                 </div>
             </div>
-            
+
             <p class="text-center mt-8 text-gray-600">
                 [Replace placeholders with your actual before/after photos]
             </p>
@@ -690,29 +810,37 @@
 
     <section id="reviews" class="py-24 md:py-28 lg:py-32 relative bg-pink-50/95 backdrop-blur-sm">
         <div class="max-w-screen-2xl mx-auto px-5 lg:px-10">
-            <h2 class="text-center text-4xl md:text-5xl lg:text-6xl mb-4 md:mb-6 gradient-text font-bold flex items-center justify-center flex-wrap gap-4">
+            <h2
+                class="text-center text-4xl md:text-5xl lg:text-6xl mb-4 md:mb-6 gradient-text font-bold flex items-center justify-center flex-wrap gap-4">
                 Client Reviews 🎀
             </h2>
             <p class="text-center text-lg md:text-xl text-gray-600 mb-16 md:mb-20 max-w-3xl mx-auto">
                 Share your experience and read what others have to say
             </p>
-            
+
             <div class="max-w-5xl mx-auto">
-                <div class="bg-white p-8 md:p-12 lg:p-14 rounded-2xl lg:rounded-3xl shadow-card border-t-4 border-custom-pink-light mb-12">
-                    <h3 class="text-custom-pink mb-8 text-xl md:text-2xl font-semibold text-center flex items-center justify-center gap-2">🎀 Leave a Review</h3>
-                    <div class="bg-green-100 text-green-800 p-4 rounded-lg mb-4 border border-green-200 hidden" id="reviewSuccess">
+                <div
+                    class="bg-white p-8 md:p-12 lg:p-14 rounded-2xl lg:rounded-3xl shadow-card border-t-4 border-custom-pink-light mb-12">
+                    <h3
+                        class="text-custom-pink mb-8 text-xl md:text-2xl font-semibold text-center flex items-center justify-center gap-2">
+                        🎀 Leave a Review</h3>
+                    <div class="bg-green-100 text-green-800 p-4 rounded-lg mb-4 border border-green-200 hidden"
+                        id="reviewSuccess">
                         Thank you for your review! 🎀 Your feedback has been submitted successfully.
                     </div>
-                    
+
                     <div class="space-y-6">
                         <div>
                             <label for="review-name" class="block mb-2 font-bold text-gray-800">Your Name *</label>
-                            <input type="text" id="review-name" name="review-name" required class="w-full p-4 border-2 border-custom-pink-light rounded-2xl text-base md:text-lg transition-all duration-300 min-h-12 focus:outline-none focus:border-custom-pink focus:shadow-pink-sm focus:-translate-y-0.5">
+                            <input type="text" id="review-name" name="review-name" required
+                                class="w-full p-4 border-2 border-custom-pink-light rounded-2xl text-base md:text-lg transition-all duration-300 min-h-12 focus:outline-none focus:border-custom-pink focus:shadow-pink-sm focus:-translate-y-0.5">
                         </div>
-                        
+
                         <div>
-                            <label for="review-service" class="block mb-2 font-bold text-gray-800">Service Received</label>
-                            <select id="review-service" name="review-service" class="w-full p-4 border-2 border-custom-pink-light rounded-2xl text-base md:text-lg transition-all duration-300 min-h-12 focus:outline-none focus:border-custom-pink focus:shadow-pink-sm focus:-translate-y-0.5">
+                            <label for="review-service" class="block mb-2 font-bold text-gray-800">Service
+                                Received</label>
+                            <select id="review-service" name="review-service"
+                                class="w-full p-4 border-2 border-custom-pink-light rounded-2xl text-base md:text-lg transition-all duration-300 min-h-12 focus:outline-none focus:border-custom-pink focus:shadow-pink-sm focus:-translate-y-0.5">
                                 <option value="">Select service...</option>
                                 <option value="Box Braids">Box Braids</option>
                                 <option value="Knotless Braids">Knotless Braids</option>
@@ -722,7 +850,7 @@
                                 <option value="Hair Consultation">Hair Consultation</option>
                             </select>
                         </div>
-                        
+
                         <div>
                             <label class="block mb-2 font-bold text-gray-800">Your Rating *</label>
                             <div class="star-rating flex justify-center gap-2 my-4 flex-row-reverse">
@@ -738,20 +866,24 @@
                                 <label for="star1" class="text-4xl md:text-5xl text-gray-300 rounded-lg p-2">⭐</label>
                             </div>
                         </div>
-                        
+
                         <div>
                             <label for="review-text" class="block mb-2 font-bold text-gray-800">Your Review *</label>
-                            <textarea id="review-text" name="review-text" rows="4" placeholder="Tell us about your experience with Janiaya's braiding services..." required class="w-full p-4 border-2 border-custom-pink-light rounded-2xl text-base md:text-lg transition-all duration-300 min-h-24 focus:outline-none focus:border-custom-pink focus:shadow-pink-sm focus:-translate-y-0.5"></textarea>
+                            <textarea id="review-text" name="review-text" rows="4"
+                                placeholder="Tell us about your experience with Janiaya's braiding services..." required
+                                class="w-full p-4 border-2 border-custom-pink-light rounded-2xl text-base md:text-lg transition-all duration-300 min-h-24 focus:outline-none focus:border-custom-pink focus:shadow-pink-sm focus:-translate-y-0.5"></textarea>
                         </div>
-                        
+
                         <div class="text-center">
-                            <button type="submit" class="bg-gradient-pink-45 border-none text-white px-8 py-4 rounded-full cursor-pointer transition-all duration-200 text-base md:text-lg font-bold shadow-pink-sm inline-flex items-center gap-2 min-h-14 hover:-translate-y-0.5 hover:shadow-pink-lg touch-manipulation" onclick="submitReview()" ontouchend="event.preventDefault(); submitReview();">
+                            <button type="submit"
+                                class="bg-gradient-pink-45 border-none text-white px-8 py-4 rounded-full cursor-pointer transition-all duration-200 text-base md:text-lg font-bold shadow-pink-sm inline-flex items-center gap-2 min-h-14 hover:-translate-y-0.5 hover:shadow-pink-lg touch-manipulation"
+                                onclick="submitReview()"  submitReview();">
                                 🎀 Submit Review
                             </button>
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mt-12" id="submittedReviews">
                     <!-- Reviews will be dynamically added here -->
                 </div>
@@ -763,71 +895,93 @@
 
     <section id="faq" class="py-24 md:py-28 lg:py-32 relative bg-white/95 backdrop-blur-sm">
         <div class="max-w-screen-2xl mx-auto px-5 lg:px-10">
-            <h2 class="text-center text-4xl md:text-5xl lg:text-6xl mb-4 md:mb-6 gradient-text font-bold flex items-center justify-center flex-wrap gap-4">
+            <h2
+                class="text-center text-4xl md:text-5xl lg:text-6xl mb-4 md:mb-6 gradient-text font-bold flex items-center justify-center flex-wrap gap-4">
                 Frequently Asked Questions 🎀
             </h2>
             <p class="text-center text-lg md:text-xl text-gray-600 mb-16 md:mb-20 max-w-3xl mx-auto">
                 Common questions about braiding services, care, and policies
             </p>
-            
+
             <div class="max-w-4xl mx-auto space-y-4">
                 <div class="bg-white mb-4 rounded-2xl overflow-hidden shadow-card border-t-3 border-custom-pink-light">
-                    <button class="w-full p-6 md:p-8 bg-gradient-pink-45 text-white cursor-pointer transition-all duration-300 border-none text-left text-lg md:text-xl font-bold flex items-center justify-between gap-4 relative min-h-16 md:min-h-20 hover:opacity-90" onclick="toggleFAQ(this)">
+                    <button
+                        class="w-full p-6 md:p-8 bg-gradient-pink-45 text-white cursor-pointer transition-all duration-300 border-none text-left text-lg md:text-xl font-bold flex items-center justify-between gap-4 relative min-h-16 md:min-h-20 hover:opacity-90"
+                        onclick="toggleFAQ(this)">
                         🎀 How long do braids typically last?
                         <span class="transform transition-transform duration-300">▼</span>
                     </button>
                     <div class="faq-answer px-6 md:px-8 text-base md:text-lg leading-relaxed">
-                        The longevity depends on the style: Box braids last 6-8 weeks, cornrows 2-4 weeks, knotless braids 6-8 weeks, and twists can last 6-10 weeks. Proper care and maintenance can extend this time.
+                        The longevity depends on the style: Box braids last 6-8 weeks, cornrows 2-4 weeks, knotless
+                        braids 6-8 weeks, and twists can last 6-10 weeks. Proper care and maintenance can extend this
+                        time.
                     </div>
                 </div>
-                
+
                 <div class="bg-white mb-4 rounded-2xl overflow-hidden shadow-card border-t-3 border-custom-pink-light">
-                    <button class="w-full p-6 md:p-8 bg-gradient-pink-45 text-white cursor-pointer transition-all duration-300 border-none text-left text-lg md:text-xl font-bold flex items-center justify-between gap-4 relative min-h-16 md:min-h-20 hover:opacity-90" onclick="toggleFAQ(this)">
+                    <button
+                        class="w-full p-6 md:p-8 bg-gradient-pink-45 text-white cursor-pointer transition-all duration-300 border-none text-left text-lg md:text-xl font-bold flex items-center justify-between gap-4 relative min-h-16 md:min-h-20 hover:opacity-90"
+                        onclick="toggleFAQ(this)">
                         🎀 How should I prepare my hair before coming?
                         <span class="transform transition-transform duration-300">▼</span>
                     </button>
                     <div class="faq-answer px-6 md:px-8 text-base md:text-lg leading-relaxed">
-                        Please wash and detangle your hair 1-2 days before your appointment. Come with clean, slightly stretched hair (blown out or twisted out). Avoid heavy oils or products on the day of service.
+                        Please wash and detangle your hair 1-2 days before your appointment. Come with clean, slightly
+                        stretched hair (blown out or twisted out). Avoid heavy oils or products on the day of service.
                     </div>
                 </div>
-                
+
                 <div class="bg-white mb-4 rounded-2xl overflow-hidden shadow-card border-t-3 border-custom-pink-light">
-                    <button class="w-full p-6 md:p-8 bg-gradient-pink-45 text-white cursor-pointer transition-all duration-300 border-none text-left text-lg md:text-xl font-bold flex items-center justify-between gap-4 relative min-h-16 md:min-h-20 hover:opacity-90" onclick="toggleFAQ(this)">
+                    <button
+                        class="w-full p-6 md:p-8 bg-gradient-pink-45 text-white cursor-pointer transition-all duration-300 border-none text-left text-lg md:text-xl font-bold flex items-center justify-between gap-4 relative min-h-16 md:min-h-20 hover:opacity-90"
+                        onclick="toggleFAQ(this)">
                         🎀 Do you provide the braiding hair?
                         <span class="transform transition-transform duration-300">▼</span>
                     </button>
                     <div class="faq-answer px-6 md:px-8 text-base md:text-lg leading-relaxed">
-                        Yes, I provide high-quality braiding hair for an additional cost. We'll discuss color and length preferences during booking. You're also welcome to bring your own hair if you prefer.
+                        Yes, I provide high-quality braiding hair for an additional cost. We'll discuss color and length
+                        preferences during booking. You're also welcome to bring your own hair if you prefer.
                     </div>
                 </div>
-                
+
                 <div class="bg-white mb-4 rounded-2xl overflow-hidden shadow-card border-t-3 border-custom-pink-light">
-                    <button class="w-full p-6 md:p-8 bg-gradient-pink-45 text-white cursor-pointer transition-all duration-300 border-none text-left text-lg md:text-xl font-bold flex items-center justify-between gap-4 relative min-h-16 md:min-h-20 hover:opacity-90" onclick="toggleFAQ(this)">
+                    <button
+                        class="w-full p-6 md:p-8 bg-gradient-pink-45 text-white cursor-pointer transition-all duration-300 border-none text-left text-lg md:text-xl font-bold flex items-center justify-between gap-4 relative min-h-16 md:min-h-20 hover:opacity-90"
+                        onclick="toggleFAQ(this)">
                         🎀 What's your cancellation policy?
                         <span class="transform transition-transform duration-300">▼</span>
                     </button>
                     <div class="faq-answer px-6 md:px-8 text-base md:text-lg leading-relaxed">
-                        Please provide at least 24 hours notice for cancellations or rescheduling. Late cancellations may incur a fee. No-shows will be charged 50% of the service cost.
+                        Please provide at least 24 hours notice for cancellations or rescheduling. Late cancellations
+                        may incur a fee. No-shows will be charged 50% of the service cost.
                     </div>
                 </div>
-                
+
                 <div class="bg-white mb-4 rounded-2xl overflow-hidden shadow-card border-t-3 border-custom-pink-light">
-                    <button class="w-full p-6 md:p-8 bg-gradient-pink-45 text-white cursor-pointer transition-all duration-300 border-none text-left text-lg md:text-xl font-bold flex items-center justify-between gap-4 relative min-h-16 md:min-h-20 hover:opacity-90" onclick="toggleFAQ(this)">
+                    <button
+                        class="w-full p-6 md:p-8 bg-gradient-pink-45 text-white cursor-pointer transition-all duration-300 border-none text-left text-lg md:text-xl font-bold flex items-center justify-between gap-4 relative min-h-16 md:min-h-20 hover:opacity-90"
+                        onclick="toggleFAQ(this)">
                         🎀 How much do your services cost?
                         <span class="transform transition-transform duration-300">▼</span>
                     </button>
                     <div class="faq-answer px-6 md:px-8 text-base md:text-lg leading-relaxed">
-                        Pricing varies by style, size, and length. Basic services start at $[Your Starting Price]. I provide transparent pricing during consultation, with no hidden fees. Payment is due at time of service.
+                        Pricing varies by style, size, and length. Basic services start at $[Your Starting Price]. I
+                        provide transparent pricing during consultation, with no hidden fees. Payment is due at time of
+                        service.
                     </div>
                 </div>
-                
+
                 <div class="bg-white mb-4 rounded-2xl overflow-hidden shadow-card border-t-3 border-custom-pink-light">
-                    <button class="w-full p-6 md:p-8 bg-gradient-pink-45 text-white cursor-pointer transition-all duration-300 border-none text-left text-lg md:text-xl font-bold flex items-center justify-between gap-4 relative min-h-16 md:min-h-20 hover:opacity-90" onclick="toggleFAQ(this)">
+                    <button
+                        class="w-full p-6 md:p-8 bg-gradient-pink-45 text-white cursor-pointer transition-all duration-300 border-none text-left text-lg md:text-xl font-bold flex items-center justify-between gap-4 relative min-h-16 md:min-h-20 hover:opacity-90"
+                        onclick="toggleFAQ(this)">
                         🎀 Do you work with all hair types?
                         <span class="transform transition-transform duration-300">▼</span>
                     </button>
                     <div class="faq-answer px-6 md:px-8 text-base md:text-lg leading-relaxed">
-                        Absolutely! I specialize in natural hair of all textures and lengths. I also work with relaxed and transitioning hair. Each consultation includes personalized recommendations for your hair type.
+                        Absolutely! I specialize in natural hair of all textures and lengths. I also work with relaxed
+                        and transitioning hair. Each consultation includes personalized recommendations for your hair
+                        type.
                     </div>
                 </div>
             </div>
@@ -838,38 +992,44 @@
 
     <section id="contact" class="py-24 md:py-28 lg:py-32 relative bg-pink-50/95 backdrop-blur-sm">
         <div class="max-w-screen-2xl mx-auto px-5 lg:px-10">
-            <h2 class="text-center text-4xl md:text-5xl lg:text-6xl mb-4 md:mb-6 gradient-text font-bold flex items-center justify-center flex-wrap gap-4">
+            <h2
+                class="text-center text-4xl md:text-5xl lg:text-6xl mb-4 md:mb-6 gradient-text font-bold flex items-center justify-center flex-wrap gap-4">
                 Contact & Booking 🎀
             </h2>
             <p class="text-center text-lg md:text-xl text-gray-600 mb-16 md:mb-20 max-w-3xl mx-auto">
                 Ready to book your appointment? Get in touch today!
             </p>
-            
+
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 mt-16">
-                <div class="bg-white p-8 md:p-12 lg:p-14 rounded-2xl lg:rounded-3xl shadow-card border-t-4 border-custom-pink-light">
+                <div
+                    class="bg-white p-8 md:p-12 lg:p-14 rounded-2xl lg:rounded-3xl shadow-card border-t-4 border-custom-pink-light">
                     <h3 class="text-custom-pink mb-8 text-xl md:text-2xl font-semibold flex items-center gap-2">
                         🎀 Book Your Appointment
                     </h3>
-                    
+
                     <div class="space-y-6">
                         <div>
                             <label for="name" class="block mb-2 font-bold text-gray-800">Full Name *</label>
-                            <input type="text" id="name" name="name" required class="w-full p-4 border-2 border-custom-pink-light rounded-2xl text-base md:text-lg transition-all duration-300 min-h-14 focus:outline-none focus:border-custom-pink focus:shadow-pink-sm focus:-translate-y-0.5">
+                            <input type="text" id="name" name="name" required
+                                class="w-full p-4 border-2 border-custom-pink-light rounded-2xl text-base md:text-lg transition-all duration-300 min-h-14 focus:outline-none focus:border-custom-pink focus:shadow-pink-sm focus:-translate-y-0.5">
                         </div>
-                        
+
                         <div>
                             <label for="email" class="block mb-2 font-bold text-gray-800">Email Address *</label>
-                            <input type="email" id="email" name="email" required class="w-full p-4 border-2 border-custom-pink-light rounded-2xl text-base md:text-lg transition-all duration-300 min-h-14 focus:outline-none focus:border-custom-pink focus:shadow-pink-sm focus:-translate-y-0.5">
+                            <input type="email" id="email" name="email" required
+                                class="w-full p-4 border-2 border-custom-pink-light rounded-2xl text-base md:text-lg transition-all duration-300 min-h-14 focus:outline-none focus:border-custom-pink focus:shadow-pink-sm focus:-translate-y-0.5">
                         </div>
-                        
+
                         <div>
                             <label for="phone" class="block mb-2 font-bold text-gray-800">Phone Number *</label>
-                            <input type="tel" id="phone" name="phone" required class="w-full p-4 border-2 border-custom-pink-light rounded-2xl text-base md:text-lg transition-all duration-300 min-h-14 focus:outline-none focus:border-custom-pink focus:shadow-pink-sm focus:-translate-y-0.5">
+                            <input type="tel" id="phone" name="phone" required
+                                class="w-full p-4 border-2 border-custom-pink-light rounded-2xl text-base md:text-lg transition-all duration-300 min-h-14 focus:outline-none focus:border-custom-pink focus:shadow-pink-sm focus:-translate-y-0.5">
                         </div>
-                        
+
                         <div>
                             <label for="service" class="block mb-2 font-bold text-gray-800">Desired Service *</label>
-                            <select id="service" name="service" required class="w-full p-4 border-2 border-custom-pink-light rounded-2xl text-base md:text-lg transition-all duration-300 min-h-14 focus:outline-none focus:border-custom-pink focus:shadow-pink-sm focus:-translate-y-0.5">
+                            <select id="service" name="service" required
+                                class="w-full p-4 border-2 border-custom-pink-light rounded-2xl text-base md:text-lg transition-all duration-300 min-h-14 focus:outline-none focus:border-custom-pink focus:shadow-pink-sm focus:-translate-y-0.5">
                                 <option value="">Select a service...</option>
                                 <option value="box-braids">Box Braids</option>
                                 <option value="knotless-braids">Knotless Braids</option>
@@ -879,68 +1039,90 @@
                                 <option value="consultation">Hair Consultation</option>
                             </select>
                         </div>
-                        
+
                         <div>
-                            <label for="hair-length" class="block mb-2 font-bold text-gray-800">Current Hair Length</label>
-                            <select id="hair-length" name="hair-length" class="w-full p-4 border-2 border-custom-pink-light rounded-2xl text-base md:text-lg transition-all duration-300 min-h-14 focus:outline-none focus:border-custom-pink focus:shadow-pink-sm focus:-translate-y-0.5">
+                            <label for="hair-length" class="block mb-2 font-bold text-gray-800">Current Hair
+                                Length</label>
+                            <select id="hair-length" name="hair-length"
+                                class="w-full p-4 border-2 border-custom-pink-light rounded-2xl text-base md:text-lg transition-all duration-300 min-h-14 focus:outline-none focus:border-custom-pink focus:shadow-pink-sm focus:-translate-y-0.5">
                                 <option value="">Select length...</option>
                                 <option value="short">Short (ear length or shorter)</option>
                                 <option value="medium">Medium (shoulder length)</option>
                                 <option value="long">Long (past shoulders)</option>
                             </select>
                         </div>
-                        
+
                         <div>
-                            <label for="preferred-date" class="block mb-2 font-bold text-gray-800">Preferred Date</label>
-                            <input type="date" id="preferred-date" name="preferred-date" class="w-full p-4 border-2 border-custom-pink-light rounded-2xl text-base md:text-lg transition-all duration-300 min-h-14 focus:outline-none focus:border-custom-pink focus:shadow-pink-sm focus:-translate-y-0.5">
+                            <label for="preferred-date" class="block mb-2 font-bold text-gray-800">Preferred
+                                Date</label>
+                            <input type="date" id="preferred-date" name="preferred-date"
+                                class="w-full p-4 border-2 border-custom-pink-light rounded-2xl text-base md:text-lg transition-all duration-300 min-h-14 focus:outline-none focus:border-custom-pink focus:shadow-pink-sm focus:-translate-y-0.5">
                         </div>
-                        
+
                         <div>
                             <label for="message" class="block mb-2 font-bold text-gray-800">Additional Details</label>
-                            <textarea id="message" name="message" rows="4" placeholder="Tell me about your hair type, any allergies, desired length/color for braids, or special requests..." class="w-full p-4 border-2 border-custom-pink-light rounded-2xl text-base md:text-lg transition-all duration-300 min-h-32 focus:outline-none focus:border-custom-pink focus:shadow-pink-sm focus:-translate-y-0.5"></textarea>
+                            <textarea id="message" name="message" rows="4"
+                                placeholder="Tell me about your hair type, any allergies, desired length/color for braids, or special requests..."
+                                class="w-full p-4 border-2 border-custom-pink-light rounded-2xl text-base md:text-lg transition-all duration-300 min-h-32 focus:outline-none focus:border-custom-pink focus:shadow-pink-sm focus:-translate-y-0.5"></textarea>
                         </div>
-                        
+
                         <div class="text-center">
-                            <button type="submit" class="bg-gradient-pink-45 border-none text-white px-8 py-4 rounded-full cursor-pointer transition-all duration-200 text-base md:text-lg font-bold shadow-pink-sm inline-flex items-center gap-2 min-h-14 hover:-translate-y-0.5 hover:shadow-pink-lg" onclick="submitBookingForm()">
+                            <button type="submit"
+                                class="bg-gradient-pink-45 border-none text-white px-8 py-4 rounded-full cursor-pointer transition-all duration-200 text-base md:text-lg font-bold shadow-pink-sm inline-flex items-center gap-2 min-h-14 hover:-translate-y-0.5 hover:shadow-pink-lg"
+                                onclick="submitBookingForm()">
                                 🎀 Send Booking Request
                             </button>
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="p-8 md:p-12 lg:p-14 space-y-8">
                     <h3 class="text-custom-pink mb-8 text-xl md:text-2xl font-semibold flex items-center gap-2">
                         🎀 Get In Touch
                     </h3>
-                    
+
                     <div class="space-y-6">
-                        <div class="flex items-center gap-4 p-6 bg-white rounded-2xl shadow-card transition-transform duration-200 border-l-4 border-custom-pink-light hover:-translate-y-0.5">
-                            <div class="w-12 h-12 md:w-14 md:h-14 bg-gradient-pink-45 rounded-full flex items-center justify-center text-white text-lg md:text-xl">📱</div>
+                        <div
+                            class="flex items-center gap-4 p-6 bg-white rounded-2xl shadow-card transition-transform duration-200 border-l-4 border-custom-pink-light hover:-translate-y-0.5">
+                            <div
+                                class="w-12 h-12 md:w-14 md:h-14 bg-gradient-pink-45 rounded-full flex items-center justify-center text-white text-lg md:text-xl">
+                                📱</div>
                             <div>
                                 <strong>Phone & Text</strong><br>
-                                <a href="tel:336-905-5624" class="text-custom-pink no-underline hover:underline">336-905-5624</a>
+                                <a href="tel:336-905-5624"
+                                    class="text-custom-pink no-underline hover:underline">336-905-5624</a>
                             </div>
                         </div>
-                        
-                        <div class="flex items-center gap-4 p-6 bg-white rounded-2xl shadow-card transition-transform duration-200 border-l-4 border-custom-pink-light hover:-translate-y-0.5">
-                            <div class="w-12 h-12 md:w-14 md:h-14 bg-gradient-pink-45 rounded-full flex items-center justify-center text-white text-lg md:text-xl">📧</div>
+
+                        <div
+                            class="flex items-center gap-4 p-6 bg-white rounded-2xl shadow-card transition-transform duration-200 border-l-4 border-custom-pink-light hover:-translate-y-0.5">
+                            <div
+                                class="w-12 h-12 md:w-14 md:h-14 bg-gradient-pink-45 rounded-full flex items-center justify-center text-white text-lg md:text-xl">
+                                📧</div>
                             <div>
                                 <strong>Email</strong><br>
-                                <a href="mailto:janiayab11@gmail.com" class="text-custom-pink no-underline hover:underline">janiayab11@gmail.com</a>
+                                <a href="mailto:janiayab11@gmail.com"
+                                    class="text-custom-pink no-underline hover:underline">janiayab11@gmail.com</a>
                             </div>
                         </div>
-                        
-                        <div class="flex items-center gap-4 p-6 bg-white rounded-2xl shadow-card transition-transform duration-200 border-l-4 border-custom-pink-light hover:-translate-y-0.5">
-                            <div class="w-12 h-12 md:w-14 md:h-14 bg-gradient-pink-45 rounded-full flex items-center justify-center text-white text-lg md:text-xl">📍</div>
+
+                        <div
+                            class="flex items-center gap-4 p-6 bg-white rounded-2xl shadow-card transition-transform duration-200 border-l-4 border-custom-pink-light hover:-translate-y-0.5">
+                            <div
+                                class="w-12 h-12 md:w-14 md:h-14 bg-gradient-pink-45 rounded-full flex items-center justify-center text-white text-lg md:text-xl">
+                                📍</div>
                             <div>
                                 <strong>Service Area</strong><br>
                                 High Point, NC<br>
                                 Willing to travel within 30 miles
                             </div>
                         </div>
-                        
-                        <div class="flex items-center gap-4 p-6 bg-white rounded-2xl shadow-card transition-transform duration-200 border-l-4 border-custom-pink-light hover:-translate-y-0.5">
-                            <div class="w-12 h-12 md:w-14 md:h-14 bg-gradient-pink-45 rounded-full flex items-center justify-center text-white text-lg md:text-xl">🕒</div>
+
+                        <div
+                            class="flex items-center gap-4 p-6 bg-white rounded-2xl shadow-card transition-transform duration-200 border-l-4 border-custom-pink-light hover:-translate-y-0.5">
+                            <div
+                                class="w-12 h-12 md:w-14 md:h-14 bg-gradient-pink-45 rounded-full flex items-center justify-center text-white text-lg md:text-xl">
+                                🕒</div>
                             <div>
                                 <strong>Hours</strong><br>
                                 Mon-Fri: [Your Hours]<br>
@@ -948,9 +1130,12 @@
                                 Sunday: [Your Hours/Closed]
                             </div>
                         </div>
-                        
-                        <div class="flex items-center gap-4 p-6 bg-white rounded-2xl shadow-card transition-transform duration-200 border-l-4 border-custom-pink-light hover:-translate-y-0.5">
-                            <div class="w-12 h-12 md:w-14 md:h-14 bg-gradient-pink-45 rounded-full flex items-center justify-center text-white text-lg md:text-xl">💳</div>
+
+                        <div
+                            class="flex items-center gap-4 p-6 bg-white rounded-2xl shadow-card transition-transform duration-200 border-l-4 border-custom-pink-light hover:-translate-y-0.5">
+                            <div
+                                class="w-12 h-12 md:w-14 md:h-14 bg-gradient-pink-45 rounded-full flex items-center justify-center text-white text-lg md:text-xl">
+                                💳</div>
                             <div>
                                 <strong>Payment Options</strong><br>
                                 Cash, Venmo, CashApp<br>
@@ -958,14 +1143,19 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="mt-8">
                         <h4 class="text-custom-pink mb-4 text-lg md:text-xl font-semibold flex items-center gap-2">
                             🎀 Quick Booking Options:
                         </h4>
                         <div class="flex gap-4 mt-4">
-                            <button class="flex-1 bg-gradient-pink-45 border-none text-white px-6 py-3 rounded-full cursor-pointer transition-all duration-200 text-base font-bold shadow-pink-sm inline-flex items-center justify-center gap-2 min-h-12 hover:-translate-y-0.5 hover:shadow-pink-lg touch-manipulation" onclick="callDirectly()" ontouchend="event.preventDefault(); callDirectly();">📞 Call</button>
-                            <button class="flex-1 bg-gradient-pink-45 border-none text-white px-6 py-3 rounded-full cursor-pointer transition-all duration-200 text-base font-bold shadow-pink-sm inline-flex items-center justify-center gap-2 min-h-12 hover:-translate-y-0.5 hover:shadow-pink-lg touch-manipulation" onclick="sendText()" ontouchend="event.preventDefault(); sendText();">💬 Text</button>
+                            <button
+                                class="flex-1 bg-gradient-pink-45 border-none text-white px-6 py-3 rounded-full cursor-pointer transition-all duration-200 text-base font-bold shadow-pink-sm inline-flex items-center justify-center gap-2 min-h-12 hover:-translate-y-0.5 hover:shadow-pink-lg touch-manipulation"
+                                onclick="callDirectly()"  callDirectly();">📞
+                                Call</button>
+                            <button
+                                class="flex-1 bg-gradient-pink-45 border-none text-white px-6 py-3 rounded-full cursor-pointer transition-all duration-200 text-base font-bold shadow-pink-sm inline-flex items-center justify-center gap-2 min-h-12 hover:-translate-y-0.5 hover:shadow-pink-lg touch-manipulation"
+                                onclick="sendText()"  sendText();">💬 Text</button>
                         </div>
                     </div>
                 </div>
@@ -975,31 +1165,41 @@
 
     <!-- Enhanced Booking Modal -->
     <div id="bookingModal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden">
-        <div class="bg-white my-12 mx-auto p-8 md:p-12 lg:p-16 rounded-2xl lg:rounded-3xl w-11/12 md:w-4/5 lg:w-3/5 xl:w-2/5 relative animate-modalSlideIn shadow-pink-2xl border-t-4 border-custom-pink-light max-w-2xl">
-            <span class="text-gray-400 float-right text-3xl font-bold cursor-pointer absolute right-5 top-5 transition-colors duration-300 hover:text-custom-pink" onclick="closeBookingModal()">&times;</span>
+        <div
+            class="bg-white my-12 mx-auto p-8 md:p-12 lg:p-16 rounded-2xl lg:rounded-3xl w-11/12 md:w-4/5 lg:w-3/5 xl:w-2/5 relative animate-modalSlideIn shadow-pink-2xl border-t-4 border-custom-pink-light max-w-2xl">
+            <span
+                class="text-gray-400 float-right text-3xl font-bold cursor-pointer absolute right-5 top-5 transition-colors duration-300 hover:text-custom-pink"
+                onclick="closeBookingModal()">&times;</span>
             <h2 class="text-custom-pink mb-4 text-2xl md:text-3xl font-bold flex items-center gap-2">
                 🎀 Choose Your Booking Method
             </h2>
-            <p class="text-base md:text-lg mb-8">Ready to book your appointment? Choose your preferred way to get started:</p>
-            
+            <p class="text-base md:text-lg mb-8">Ready to book your appointment? Choose your preferred way to get
+                started:</p>
+
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
-                <button class="bg-gradient-pink-45 border-none text-white px-6 py-4 rounded-2xl cursor-pointer transition-all duration-300 text-base font-bold shadow-pink-sm flex flex-col items-center justify-center gap-2 min-h-20 hover:-translate-y-1 hover:shadow-pink-lg" onclick="callDirectly()">
+                <button
+                    class="bg-gradient-pink-45 border-none text-white px-6 py-4 rounded-2xl cursor-pointer transition-all duration-300 text-base font-bold shadow-pink-sm flex flex-col items-center justify-center gap-2 min-h-20 hover:-translate-y-1 hover:shadow-pink-lg"
+                    onclick="callDirectly()">
                     📞 Call Now<br>
                     <small class="font-normal text-sm">Quick phone booking</small>
                 </button>
-                <button class="bg-gradient-pink-45 border-none text-white px-6 py-4 rounded-2xl cursor-pointer transition-all duration-300 text-base font-bold shadow-pink-sm flex flex-col items-center justify-center gap-2 min-h-20 hover:-translate-y-1 hover:shadow-pink-lg" onclick="sendText()">
+                <button
+                    class="bg-gradient-pink-45 border-none text-white px-6 py-4 rounded-2xl cursor-pointer transition-all duration-300 text-base font-bold shadow-pink-sm flex flex-col items-center justify-center gap-2 min-h-20 hover:-translate-y-1 hover:shadow-pink-lg"
+                    onclick="sendText()">
                     💬 Text Message<br>
                     <small class="font-normal text-sm">Text to schedule</small>
                 </button>
             </div>
-            
+
             <div class="mt-4">
-                <button class="w-full bg-gradient-pink-45 border-none text-white px-6 py-4 rounded-2xl cursor-pointer transition-all duration-300 text-base font-bold shadow-pink-sm flex flex-col items-center justify-center gap-2 min-h-20 hover:-translate-y-1 hover:shadow-pink-lg" onclick="sendEmail()">
+                <button
+                    class="w-full bg-gradient-pink-45 border-none text-white px-6 py-4 rounded-2xl cursor-pointer transition-all duration-300 text-base font-bold shadow-pink-sm flex flex-col items-center justify-center gap-2 min-h-20 hover:-translate-y-1 hover:shadow-pink-lg"
+                    onclick="sendEmail()">
                     📧 Email Request<br>
                     <small class="font-normal text-sm">Detailed booking form</small>
                 </button>
             </div>
-            
+
             <div class="mt-8 pt-4 border-t border-gray-200 text-center">
                 <p class="font-bold">Contact Information:</p>
                 <p class="text-sm md:text-base">📱 336-905-5624 | 📧 janiayab11@gmail.com</p>
@@ -1013,13 +1213,16 @@
                 <h3 class="mb-6 text-xl md:text-2xl font-semibold text-white flex items-center justify-center gap-2">
                     🎀 Stay Updated
                 </h3>
-                <p class="mb-6 text-base md:text-lg">Subscribe for hair care tips, styling inspiration, and special offers!</p>
+                <p class="mb-6 text-base md:text-lg">Subscribe for hair care tips, styling inspiration, and special
+                    offers!</p>
                 <div class="flex flex-col md:flex-row gap-4 max-w-md mx-auto">
-                    <input type="email" placeholder="Enter your email address" id="newsletter-email" class="flex-1 p-3 md:p-4 border-none rounded-full outline-none text-base md:text-lg min-h-12 md:min-h-14">
-                    <button onclick="subscribeNewsletter()" ontouchend="event.preventDefault(); subscribeNewsletter();" class="px-6 py-3 md:py-4 bg-white/90 border-none rounded-full text-custom-pink cursor-pointer font-bold text-base md:text-lg transition-transform duration-200 min-h-12 md:min-h-14 hover:scale-105 touch-manipulation">Subscribe</button>
+                    <input type="email" placeholder="Enter your email address" id="newsletter-email"
+                        class="flex-1 p-3 md:p-4 border-none rounded-full outline-none text-base md:text-lg min-h-12 md:min-h-14">
+                    <button onclick="subscribeNewsletter()" subscribeNewsletter();"
+                        class="px-6 py-3 md:py-4 bg-white/90 border-none rounded-full text-custom-pink cursor-pointer font-bold text-base md:text-lg transition-transform duration-200 min-h-12 md:min-h-14 hover:scale-105 touch-manipulation">Subscribe</button>
                 </div>
             </div>
-            
+
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 mb-12">
                 <div class="p-6">
                     <h3 class="mb-4 text-lg md:text-xl font-semibold text-white flex items-center justify-center gap-2">
@@ -1032,33 +1235,37 @@
                         <li>🕒 [Your Hours]</li>
                     </ul>
                 </div>
-                
+
                 <div class="p-6">
                     <h3 class="mb-4 text-lg md:text-xl font-semibold text-white flex items-center justify-center gap-2">
                         🎀 Follow Me
                     </h3>
                     <p class="text-sm md:text-base">Stay connected for hair inspiration, tips, and booking updates!</p>
                 </div>
-                
+
                 <div class="p-6">
                     <h3 class="mb-4 text-lg md:text-xl font-semibold text-white flex items-center justify-center gap-2">
                         🎀 Services
                     </h3>
                     <p class="text-sm md:text-base">Box Braids • Knotless Braids • Cornrows<br>
-                    Goddess Braids • Twist Styles • Consultations</p>
+                        Goddess Braids • Twist Styles • Consultations</p>
                 </div>
             </div>
-            
+
             <div class="mt-8 pt-8 border-t border-white/10">
-                <p class="text-sm md:text-base">&copy; 2025 Janiaya Bethea Professional Hair Braiding. All rights reserved.</p>
-                <p class="text-sm md:text-base mt-2">Professional braiding services • Natural hair specialist • Licensed & insured</p>
+                <p class="text-sm md:text-base">&copy; 2025 Janiaya Bethea Professional Hair Braiding. All rights
+                    reserved.</p>
+                <p class="text-sm md:text-base mt-2">Professional braiding services • Natural hair specialist • Licensed
+                    & insured</p>
                 <p class="mt-4 text-xs md:text-sm opacity-80">Follow us: @Who_didjo.hair on Instagram & Facebook</p>
             </div>
         </div>
     </footer>
 
     <!-- Back to Top Button -->
-    <button class="back-to-top fixed bottom-5 right-5 w-12 h-12 md:w-14 md:h-14 bg-gradient-pink-45 text-white border-none rounded-full cursor-pointer shadow-pink-sm transition-all duration-200 z-50 hidden items-center justify-center hover:-translate-y-0.5 hover:shadow-pink-md touch-manipulation" id="backToTop" onclick="scrollToTop()" ontouchend="event.preventDefault(); scrollToTop();">
+    <button
+        class="back-to-top fixed bottom-5 right-5 w-12 h-12 md:w-14 md:h-14 bg-gradient-pink-45 text-white border-none rounded-full cursor-pointer shadow-pink-sm transition-all duration-200 z-50 hidden items-center justify-center hover:-translate-y-0.5 hover:shadow-pink-md touch-manipulation"
+        id="backToTop" onclick="scrollToTop()" scrollToTop();">
     </button>
 
     <script>
@@ -1088,11 +1295,11 @@
                     behavior: 'smooth',
                     block: 'center'
                 });
-                
+
                 // Add temporary highlight effect
                 serviceCard.style.transform = 'translateY(-2px)';
                 serviceCard.style.boxShadow = '0 25px 50px rgba(245, 39, 166, 0.2)';
-                
+
                 setTimeout(() => {
                     serviceCard.style.transform = '';
                     serviceCard.style.boxShadow = '';
@@ -1135,19 +1342,19 @@
             document.getElementById('review-name').value = '';
             document.getElementById('review-service').value = '';
             document.getElementById('review-text').value = '';
-            
+
             // Reset star rating
             const checkedRadio = document.querySelector('input[name="rating"]:checked');
             if (checkedRadio) {
                 checkedRadio.checked = false;
             }
-            
+
             // Reset star display
             const stars = document.querySelectorAll('.star-rating label');
             stars.forEach(star => {
                 star.style.color = '#ddd';
             });
-            
+
             // Reset selected rating
             selectedRating = 0;
 
@@ -1175,9 +1382,9 @@ Please check your website for the full review display.`;
             const reviewsContainer = document.getElementById('submittedReviews');
             const reviewElement = document.createElement('div');
             reviewElement.className = 'bg-white p-8 rounded-2xl shadow-card border-l-4 border-custom-pink-light opacity-0 animate-fadeInUp';
-            
+
             const stars = '⭐'.repeat(review.rating);
-            
+
             reviewElement.innerHTML = `
                 <div class="flex justify-between items-center mb-4">
                     <div class="text-custom-pink-light text-xl">${stars}</div>
@@ -1186,14 +1393,14 @@ Please check your website for the full review display.`;
                 <div class="italic mb-4 leading-relaxed">"${review.text}"</div>
                 <div class="font-bold text-custom-pink flex items-center gap-1">🎀 ${review.name} - ${review.service}</div>
             `;
-            
+
             reviewsContainer.appendChild(reviewElement);
-            
+
             // Trigger animation
             setTimeout(() => {
                 reviewElement.style.opacity = '1';
             }, 100);
-            
+
             // Scroll to the new review
             reviewElement.scrollIntoView({
                 behavior: 'smooth',
@@ -1206,7 +1413,7 @@ Please check your website for the full review display.`;
             const answer = button.nextElementSibling;
             const arrow = button.querySelector('span');
             const isActive = answer.classList.contains('active');
-            
+
             // Close all FAQ answers and reset arrows
             document.querySelectorAll('.faq-answer').forEach(ans => {
                 ans.classList.remove('active');
@@ -1215,7 +1422,7 @@ Please check your website for the full review display.`;
             document.querySelectorAll('.faq-question span').forEach(arr => {
                 arr.style.transform = 'rotate(0deg)';
             });
-            
+
             // If this wasn't active, open it
             if (!isActive) {
                 answer.classList.add('active');
@@ -1235,7 +1442,7 @@ Please check your website for the full review display.`;
             document.body.style.overflow = 'auto';
         }
 
-        window.onclick = function(event) {
+        window.onclick = function (event) {
             const modal = document.getElementById('bookingModal');
             if (event.target == modal) {
                 closeBookingModal();
@@ -1282,12 +1489,12 @@ Please check your website for the full review display.`;
 
             // Enhanced validation with user-friendly messages
             const errors = [];
-            
+
             if (!formData.name) {
                 errors.push('Please enter your full name');
                 highlightField('name');
             }
-            
+
             if (!formData.email) {
                 errors.push('Please enter your email address');
                 highlightField('email');
@@ -1295,7 +1502,7 @@ Please check your website for the full review display.`;
                 errors.push('Please enter a valid email address');
                 highlightField('email');
             }
-            
+
             if (!formData.phone) {
                 errors.push('Please enter your phone number');
                 highlightField('phone');
@@ -1303,7 +1510,7 @@ Please check your website for the full review display.`;
                 errors.push('Please enter a valid phone number');
                 highlightField('phone');
             }
-            
+
             if (!formData.service) {
                 errors.push('Please select a service');
                 highlightField('service');
@@ -1319,7 +1526,7 @@ Please check your website for the full review display.`;
 
             // Determine contact method text
             let contactMethodText = '';
-            switch(formData.contactMethod) {
+            switch (formData.contactMethod) {
                 case 'email':
                     contactMethodText = 'Email preferred';
                     break;
@@ -1364,10 +1571,10 @@ ${new Date().toLocaleString()}`;
                 // Email or both
                 window.location.href = `mailto:janiayab11@gmail.com?subject=New Booking Request - ${formData.service} 🎀&body=${encodeURIComponent(emailBody)}`;
             }
-            
+
             // Show success message
             showSuccessMessage(`Thank you ${formData.name}! Your detailed booking request has been sent. I'll contact you via ${formData.contactMethod === 'both' ? 'your preferred method' : formData.contactMethod} soon to confirm your ${formData.service} appointment. 🎀`);
-            
+
             // Reset form
             resetDetailedBookingForm();
         }
@@ -1381,13 +1588,13 @@ ${new Date().toLocaleString()}`;
             document.getElementById('hair-length').value = '';
             document.getElementById('preferred-date').value = '';
             document.getElementById('message').value = '';
-            
+
             // Reset contact method to email
             const emailRadio = document.querySelector('input[name="contact-method"][value="email"]');
             if (emailRadio) {
                 emailRadio.checked = true;
             }
-            
+
             clearFormHighlights();
         }
 
@@ -1408,9 +1615,9 @@ ${new Date().toLocaleString()}`;
             if (field) {
                 field.style.borderColor = '#ff4444';
                 field.style.boxShadow = '0 0 10px rgba(255, 68, 68, 0.3)';
-                
+
                 // Remove highlight after user starts typing
-                field.addEventListener('input', function() {
+                field.addEventListener('input', function () {
                     field.style.borderColor = '#FFA1D3';
                     field.style.boxShadow = 'none';
                 }, { once: true });
@@ -1446,17 +1653,17 @@ ${new Date().toLocaleString()}`;
                 alert('Please enter your email address');
                 return;
             }
-            
+
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             if (!emailRegex.test(email)) {
                 alert('Please enter a valid email address');
                 return;
             }
-            
+
             const subject = "Newsletter Subscription 🎀";
             const body = `New newsletter subscription from: ${email}`;
             window.open(`mailto:janiayab11@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`);
-            
+
             alert('Thank you for subscribing! You\'ll receive hair care tips and updates soon. 🎀');
             document.getElementById('newsletter-email').value = '';
         }
@@ -1465,7 +1672,7 @@ ${new Date().toLocaleString()}`;
         function toggleMobileMenu() {
             const mobileMenu = document.getElementById('mobileMenu');
             const menuBtn = document.querySelector('.mobile-menu-btn');
-            
+
             if (mobileMenu && menuBtn) {
                 if (mobileMenu.classList.contains('hidden')) {
                     mobileMenu.classList.remove('hidden');
@@ -1490,7 +1697,7 @@ ${new Date().toLocaleString()}`;
         function closeMobileMenu() {
             const mobileMenu = document.getElementById('mobileMenu');
             const menuBtn = document.querySelector('.mobile-menu-btn');
-            
+
             if (mobileMenu && menuBtn) {
                 mobileMenu.classList.add('hidden');
                 mobileMenu.style.display = 'none';
@@ -1511,9 +1718,9 @@ ${new Date().toLocaleString()}`;
         }
 
         // Show/hide back to top button - header stays white always
-        window.addEventListener('scroll', function() {
+        window.addEventListener('scroll', function () {
             const backToTopBtn = document.getElementById('backToTop');
-            
+
             if (window.scrollY > 300) {
                 backToTopBtn.classList.remove('hidden');
                 backToTopBtn.classList.add('flex');
@@ -1524,7 +1731,7 @@ ${new Date().toLocaleString()}`;
         });
 
         // Initialize all functionality when DOM is loaded - Enhanced for mobile
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             // Initialize date picker
             const dateInput = document.getElementById('preferred-date');
             if (dateInput) {
@@ -1536,19 +1743,19 @@ ${new Date().toLocaleString()}`;
             setTimeout(() => {
                 initializeStarRating();
             }, 100);
-            
+
             // Initialize scroll animations
             initializeScrollAnimations();
-            
+
             // Initialize accessibility features
             initializeAccessibility();
-            
+
             // Initialize modal close button
             const closeBtn = document.querySelector('#bookingModal .close');
             if (closeBtn) {
                 closeBtn.addEventListener('click', closeBookingModal);
                 // Add touch event for mobile
-                closeBtn.addEventListener('touchend', function(e) {
+                closeBtn.addEventListener('touchend', function (e) {
                     e.preventDefault();
                     closeBookingModal();
                 });
@@ -1559,15 +1766,15 @@ ${new Date().toLocaleString()}`;
             if (mobileMenuBtn) {
                 // Remove existing event listeners
                 mobileMenuBtn.removeEventListener('click', toggleMobileMenu);
-                
+
                 // Add both click and touchend for mobile compatibility
-                mobileMenuBtn.addEventListener('click', function(e) {
+                mobileMenuBtn.addEventListener('click', function (e) {
                     e.preventDefault();
                     e.stopPropagation();
                     toggleMobileMenu();
                 });
-                
-                mobileMenuBtn.addEventListener('touchend', function(e) {
+
+                mobileMenuBtn.addEventListener('touchend', function (e) {
                     e.preventDefault();
                     e.stopPropagation();
                     toggleMobileMenu();
@@ -1578,7 +1785,7 @@ ${new Date().toLocaleString()}`;
             const bookButtons = document.querySelectorAll('[onclick*="openBookingModal"]');
             bookButtons.forEach(button => {
                 // Add touch event for mobile
-                button.addEventListener('touchend', function(e) {
+                button.addEventListener('touchend', function (e) {
                     e.preventDefault();
                     e.stopPropagation();
                     openBookingModal();
@@ -1588,7 +1795,7 @@ ${new Date().toLocaleString()}`;
             // Fix mobile navigation links
             const navLinks = document.querySelectorAll('a[href^="#"]');
             navLinks.forEach(link => {
-                link.addEventListener('touchend', function(e) {
+                link.addEventListener('touchend', function (e) {
                     const href = this.getAttribute('href');
                     if (href && href !== '#book') {
                         const target = document.querySelector(href);
@@ -1609,7 +1816,7 @@ ${new Date().toLocaleString()}`;
             // Enhanced service card clicks for mobile
             const serviceCards = document.querySelectorAll('[onclick*="showServiceDetails"]');
             serviceCards.forEach(card => {
-                card.addEventListener('touchend', function(e) {
+                card.addEventListener('touchend', function (e) {
                     e.preventDefault();
                     const onclickAttr = this.getAttribute('onclick');
                     if (onclickAttr) {
@@ -1626,14 +1833,14 @@ ${new Date().toLocaleString()}`;
         function initializeStarRating() {
             const ratingContainer = document.querySelector('.star-rating');
             if (!ratingContainer) return;
-            
+
             const stars = document.querySelectorAll('.star-rating label');
             const radios = document.querySelectorAll('.star-rating input[type="radio"]');
-            
+
             // Convert NodeList to Array and reverse it to match our CSS order
             const starsArray = Array.from(stars).reverse();
             const radiosArray = Array.from(radios).reverse();
-            
+
             // Reset all stars to default state
             function resetStars() {
                 starsArray.forEach(star => {
@@ -1643,7 +1850,7 @@ ${new Date().toLocaleString()}`;
                     star.style.opacity = '1';
                 });
             }
-            
+
             // Update star display based on rating
             function updateStarDisplay(rating, isHover = false) {
                 starsArray.forEach((star, index) => {
@@ -1677,49 +1884,49 @@ ${new Date().toLocaleString()}`;
                     }
                 });
             }
-            
+
             starsArray.forEach((star, index) => {
                 const rating = index + 1;
-                
+
                 // Handle click
-                star.addEventListener('click', function(e) {
+                star.addEventListener('click', function (e) {
                     e.preventDefault();
                     selectedRating = rating;
                     radiosArray[index].checked = true;
-                    
+
                     // Clear all radio buttons first
                     radiosArray.forEach(radio => radio.checked = false);
                     // Set the correct one
                     radiosArray[index].checked = true;
-                    
+
                     updateStarDisplay(rating, false);
-                    
+
                     // Add visual feedback for click
                     star.style.transform = 'scale(1.2)';
                     setTimeout(() => {
                         updateStarDisplay(rating, false);
                     }, 150);
                 });
-                
+
                 // Handle hover
-                star.addEventListener('mouseenter', function() {
+                star.addEventListener('mouseenter', function () {
                     if (selectedRating === 0) {
                         updateStarDisplay(rating, true);
                     }
                 });
             });
-            
+
             // Handle mouse leave on container
-            ratingContainer.addEventListener('mouseleave', function() {
+            ratingContainer.addEventListener('mouseleave', function () {
                 if (selectedRating === 0) {
                     resetStars();
                 } else {
                     updateStarDisplay(selectedRating, false);
                 }
             });
-            
+
             // Global function to reset star rating
-            window.resetStarRating = function() {
+            window.resetStarRating = function () {
                 selectedRating = 0;
                 radiosArray.forEach(radio => radio.checked = false);
                 resetStars();
@@ -1733,7 +1940,7 @@ ${new Date().toLocaleString()}`;
                 rootMargin: '0px 0px -50px 0px'
             };
 
-            const observer = new IntersectionObserver(function(entries) {
+            const observer = new IntersectionObserver(function (entries) {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         entry.target.style.opacity = '1';
@@ -1746,7 +1953,7 @@ ${new Date().toLocaleString()}`;
             const animatedElements = document.querySelectorAll(
                 '.service-card, .before-after-item, .submitted-review, .credential-item'
             );
-            
+
             animatedElements.forEach(element => {
                 element.style.opacity = '0';
                 element.style.transform = 'translateY(15px)'; // Reduced from 30px
@@ -1770,7 +1977,7 @@ ${new Date().toLocaleString()}`;
             serviceCards.forEach(card => {
                 card.setAttribute('tabindex', '0');
                 card.setAttribute('role', 'button');
-                card.addEventListener('keydown', function(e) {
+                card.addEventListener('keydown', function (e) {
                     if (e.key === 'Enter' || e.key === ' ') {
                         e.preventDefault();
                         card.click();
@@ -1787,35 +1994,35 @@ ${new Date().toLocaleString()}`;
         }
 
         // Close mobile menu when clicking/touching outside - Enhanced
-        document.addEventListener('click', function(event) {
+        document.addEventListener('click', function (event) {
             const mobileMenu = document.getElementById('mobileMenu');
             const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
             const nav = document.querySelector('nav');
-            
+
             if (!nav.contains(event.target) && !mobileMenu.classList.contains('hidden')) {
                 closeMobileMenu();
             }
         });
 
         // Handle mobile menu for touch devices - Enhanced
-        document.addEventListener('touchstart', function(event) {
+        document.addEventListener('touchstart', function (event) {
             const mobileMenu = document.getElementById('mobileMenu');
             const nav = document.querySelector('nav');
-            
+
             if (!nav.contains(event.target) && !mobileMenu.classList.contains('hidden')) {
                 closeMobileMenu();
             }
         });
 
         // Handle escape key for modals and menus - Enhanced
-        document.addEventListener('keydown', function(event) {
+        document.addEventListener('keydown', function (event) {
             if (event.key === 'Escape') {
                 // Close booking modal
                 const bookingModal = document.getElementById('bookingModal');
                 if (!bookingModal.classList.contains('hidden')) {
                     closeBookingModal();
                 }
-                
+
                 // Close mobile menu
                 const mobileMenu = document.getElementById('mobileMenu');
                 if (!mobileMenu.classList.contains('hidden')) {
@@ -1824,7 +2031,8 @@ ${new Date().toLocaleString()}`;
             }
         });
 
-       
+
     </script>
 </body>
+
 </html>
