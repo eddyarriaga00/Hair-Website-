@@ -115,6 +115,18 @@
         
         body {
             font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        /* Touch optimization for mobile devices */
+        .touch-manipulation {
+            touch-action: manipulation;
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
         }
         
         /* Custom gradient text for older browsers */
@@ -344,9 +356,9 @@
                 <li><a href="#contact" class="nav-link-hover relative text-gray-800 font-semibold transition-all duration-200 py-2 hover:text-custom-pink hover:-translate-y-0.5">Contact</a></li>
             </ul>
             
-            <button class="md:hidden bg-gradient-pink-45 border-none text-white text-lg cursor-pointer w-11 h-11 rounded-lg transition-all duration-200 shadow-pink-sm z-50 hover:scale-105 hover:shadow-pink-md" onclick="toggleMobileMenu()">☰</button>
+            <button class="md:hidden bg-gradient-pink-45 border-none text-white text-lg cursor-pointer w-11 h-11 rounded-lg transition-all duration-200 shadow-pink-sm z-50 hover:scale-105 hover:shadow-pink-md touch-manipulation" onclick="toggleMobileMenu()" ontouchend="event.preventDefault(); toggleMobileMenu();">☰</button>
             
-            <button class="hidden md:flex bg-gradient-pink-45 text-white px-6 py-3 rounded-full font-bold transition-all duration-200 shadow-pink-sm items-center gap-2 hover:-translate-y-0.5 hover:shadow-pink-md" onclick="openBookingModal()">
+            <button class="hidden md:flex bg-gradient-pink-45 text-white px-6 py-3 rounded-full font-bold transition-all duration-200 shadow-pink-sm items-center gap-2 hover:-translate-y-0.5 hover:shadow-pink-md touch-manipulation" onclick="openBookingModal()" ontouchend="event.preventDefault(); openBookingModal();">
                 🎀 Book Now
             </button>
             
@@ -392,10 +404,10 @@
             </p>
             
             <div class="flex flex-col md:flex-row gap-4 md:gap-6 justify-center items-center mt-8">
-                <a href="#book" class="w-full md:w-auto inline-flex items-center justify-center gap-2 px-8 md:px-12 py-4 md:py-5 bg-gradient-pink-45 text-white no-underline rounded-full font-bold text-base md:text-lg transition-all duration-200 shadow-pink-lg min-h-14 md:min-h-16 hover:-translate-y-0.5 hover:shadow-pink-xl">
+                <a href="#book" class="w-full md:w-auto inline-flex items-center justify-center gap-2 px-8 md:px-12 py-4 md:py-5 bg-gradient-pink-45 text-white no-underline rounded-full font-bold text-base md:text-lg transition-all duration-200 shadow-pink-lg min-h-14 md:min-h-16 hover:-translate-y-0.5 hover:shadow-pink-xl touch-manipulation" onclick="openBookingModal()" ontouchend="event.preventDefault(); openBookingModal();">
                     🎀 Book Your Appointment
                 </a>
-                <a href="#before-after" class="w-full md:w-auto inline-flex items-center justify-center gap-2 px-8 md:px-12 py-4 md:py-5 bg-white/20 border-3 border-black text-gray-800 no-underline rounded-full font-bold text-base md:text-lg transition-all duration-200 backdrop-blur-sm min-h-14 md:min-h-16 hover:bg-white/30 hover:border-gray-800 hover:text-black">
+                <a href="#before-after" class="w-full md:w-auto inline-flex items-center justify-center gap-2 px-8 md:px-12 py-4 md:py-5 bg-white/20 border-3 border-black text-gray-800 no-underline rounded-full font-bold text-base md:text-lg transition-all duration-200 backdrop-blur-sm min-h-14 md:min-h-16 hover:bg-white/30 hover:border-gray-800 hover:text-black touch-manipulation">
                     🎀 View Portfolio
                 </a>
             </div>
@@ -570,7 +582,7 @@
             </div>
             
             <div class="text-center mt-12 lg:mt-16">
-                <button class="bg-gradient-pink-45 border-none text-white px-8 py-4 rounded-full cursor-pointer transition-all duration-200 text-base md:text-lg font-bold shadow-pink-sm inline-flex items-center gap-2 min-h-14 hover:-translate-y-0.5 hover:shadow-pink-lg" onclick="openBookingModal()">
+                <button class="bg-gradient-pink-45 border-none text-white px-8 py-4 rounded-full cursor-pointer transition-all duration-200 text-base md:text-lg font-bold shadow-pink-sm inline-flex items-center gap-2 min-h-14 hover:-translate-y-0.5 hover:shadow-pink-lg touch-manipulation" onclick="openBookingModal()" ontouchend="event.preventDefault(); openBookingModal();">
                     🎀 Book Your Service
                 </button>
             </div>
@@ -733,7 +745,7 @@
                         </div>
                         
                         <div class="text-center">
-                            <button type="submit" class="bg-gradient-pink-45 border-none text-white px-8 py-4 rounded-full cursor-pointer transition-all duration-200 text-base md:text-lg font-bold shadow-pink-sm inline-flex items-center gap-2 min-h-14 hover:-translate-y-0.5 hover:shadow-pink-lg" onclick="submitReview()">
+                            <button type="submit" class="bg-gradient-pink-45 border-none text-white px-8 py-4 rounded-full cursor-pointer transition-all duration-200 text-base md:text-lg font-bold shadow-pink-sm inline-flex items-center gap-2 min-h-14 hover:-translate-y-0.5 hover:shadow-pink-lg touch-manipulation" onclick="submitReview()" ontouchend="event.preventDefault(); submitReview();">
                                 🎀 Submit Review
                             </button>
                         </div>
@@ -952,8 +964,8 @@
                             🎀 Quick Booking Options:
                         </h4>
                         <div class="flex gap-4 mt-4">
-                            <button class="flex-1 bg-gradient-pink-45 border-none text-white px-6 py-3 rounded-full cursor-pointer transition-all duration-200 text-base font-bold shadow-pink-sm inline-flex items-center justify-center gap-2 min-h-12 hover:-translate-y-0.5 hover:shadow-pink-lg" onclick="callDirectly()">📞 Call</button>
-                            <button class="flex-1 bg-gradient-pink-45 border-none text-white px-6 py-3 rounded-full cursor-pointer transition-all duration-200 text-base font-bold shadow-pink-sm inline-flex items-center justify-center gap-2 min-h-12 hover:-translate-y-0.5 hover:shadow-pink-lg" onclick="sendText()">💬 Text</button>
+                            <button class="flex-1 bg-gradient-pink-45 border-none text-white px-6 py-3 rounded-full cursor-pointer transition-all duration-200 text-base font-bold shadow-pink-sm inline-flex items-center justify-center gap-2 min-h-12 hover:-translate-y-0.5 hover:shadow-pink-lg touch-manipulation" onclick="callDirectly()" ontouchend="event.preventDefault(); callDirectly();">📞 Call</button>
+                            <button class="flex-1 bg-gradient-pink-45 border-none text-white px-6 py-3 rounded-full cursor-pointer transition-all duration-200 text-base font-bold shadow-pink-sm inline-flex items-center justify-center gap-2 min-h-12 hover:-translate-y-0.5 hover:shadow-pink-lg touch-manipulation" onclick="sendText()" ontouchend="event.preventDefault(); sendText();">💬 Text</button>
                         </div>
                     </div>
                 </div>
@@ -1004,7 +1016,7 @@
                 <p class="mb-6 text-base md:text-lg">Subscribe for hair care tips, styling inspiration, and special offers!</p>
                 <div class="flex flex-col md:flex-row gap-4 max-w-md mx-auto">
                     <input type="email" placeholder="Enter your email address" id="newsletter-email" class="flex-1 p-3 md:p-4 border-none rounded-full outline-none text-base md:text-lg min-h-12 md:min-h-14">
-                    <button onclick="subscribeNewsletter()" class="px-6 py-3 md:py-4 bg-white/90 border-none rounded-full text-custom-pink cursor-pointer font-bold text-base md:text-lg transition-transform duration-300 min-h-12 md:min-h-14 hover:scale-105">Subscribe</button>
+                    <button onclick="subscribeNewsletter()" ontouchend="event.preventDefault(); subscribeNewsletter();" class="px-6 py-3 md:py-4 bg-white/90 border-none rounded-full text-custom-pink cursor-pointer font-bold text-base md:text-lg transition-transform duration-200 min-h-12 md:min-h-14 hover:scale-105 touch-manipulation">Subscribe</button>
                 </div>
             </div>
             
@@ -1046,7 +1058,7 @@
     </footer>
 
     <!-- Back to Top Button -->
-    <button class="back-to-top fixed bottom-5 right-5 w-12 h-12 md:w-14 md:h-14 bg-gradient-pink-45 text-white border-none rounded-full cursor-pointer shadow-pink-sm transition-all duration-200 z-50 hidden items-center justify-center hover:-translate-y-0.5 hover:shadow-pink-md" id="backToTop" onclick="scrollToTop()">
+    <button class="back-to-top fixed bottom-5 right-5 w-12 h-12 md:w-14 md:h-14 bg-gradient-pink-45 text-white border-none rounded-full cursor-pointer shadow-pink-sm transition-all duration-200 z-50 hidden items-center justify-center hover:-translate-y-0.5 hover:shadow-pink-md touch-manipulation" id="backToTop" onclick="scrollToTop()" ontouchend="event.preventDefault(); scrollToTop();">
     </button>
 
     <script>
@@ -1230,31 +1242,38 @@ Please check your website for the full review display.`;
             }
         }
 
-        // Contact Functions
+        // Contact Functions - Enhanced with mobile fixes
         function callDirectly() {
-            window.open("tel:336-905-5624");
+            window.location.href = "tel:336-905-5624";
             closeBookingModal();
         }
 
         function sendText() {
             const message = "Hi Janiaya! I'd like to book a braiding appointment. Could you please let me know your availability? 🎀";
-            window.open(`sms:336-905-5624?body=${encodeURIComponent(message)}`);
+            window.location.href = `sms:336-905-5624?body=${encodeURIComponent(message)}`;
             closeBookingModal();
         }
 
         function sendEmail() {
             const subject = "Braiding Appointment Request 🎀";
             const body = "Hi Janiaya,\n\nI would like to book a braiding appointment. Here are my details:\n\nName: \nService: \nPreferred Date: \nHair Length: \nSpecial Requests: \n\nPlease let me know your availability.\n\nThank you! 🎀";
-            window.open(`mailto:janiayab11@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`);
+            window.location.href = `mailto:janiayab11@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
             closeBookingModal();
         }
 
-        // Enhanced form submission with better validation
-        function submitBookingForm() {
+        function sendQuickEmail() {
+            const subject = "Quick Booking Request 🎀";
+            const body = "Hi Janiaya,\n\nI would like to schedule a braiding appointment. Please contact me to discuss available times and services.\n\nThank you! 🎀";
+            window.location.href = `mailto:janiayab11@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        }
+
+        // Enhanced form submission with contact method preference
+        function submitDetailedBookingForm() {
             const formData = {
                 name: document.getElementById('name').value.trim(),
                 email: document.getElementById('email').value.trim(),
                 phone: document.getElementById('phone').value.trim(),
+                contactMethod: document.querySelector('input[name="contact-method"]:checked')?.value || 'email',
                 service: document.getElementById('service').value,
                 hairLength: document.getElementById('hair-length').value,
                 date: document.getElementById('preferred-date').value,
@@ -1298,13 +1317,30 @@ Please check your website for the full review display.`;
             // Clear any previous errors
             clearFormErrors();
 
+            // Determine contact method text
+            let contactMethodText = '';
+            switch(formData.contactMethod) {
+                case 'email':
+                    contactMethodText = 'Email preferred';
+                    break;
+                case 'phone':
+                    contactMethodText = 'Phone/Text preferred';
+                    break;
+                case 'both':
+                    contactMethodText = 'Either email or phone is fine';
+                    break;
+                default:
+                    contactMethodText = 'Email preferred';
+            }
+
             // Create detailed email body
-            const emailBody = `New Booking Request from ${formData.name} 🎀
+            const emailBody = `New Detailed Booking Request from ${formData.name} 🎀
 
 Contact Information:
 • Name: ${formData.name}
 • Email: ${formData.email}
 • Phone: ${formData.phone}
+• Preferred Contact Method: ${contactMethodText}
 
 Service Details:
 • Requested Service: ${formData.service}
@@ -1314,20 +1350,44 @@ Service Details:
 Additional Details:
 ${formData.message || 'None provided'}
 
-Please respond to confirm the appointment details and availability. 🎀
+Please respond using their preferred contact method. 🎀
 
 ---
-Sent from your website booking form
+Sent from your website detailed booking form
 ${new Date().toLocaleString()}`;
 
-            // Send email
-            window.open(`mailto:janiayab11@gmail.com?subject=New Booking Request - ${formData.service} 🎀&body=${encodeURIComponent(emailBody)}`);
+            // Always send email, but customize message based on preference
+            if (formData.contactMethod === 'phone') {
+                // Primary to email, but mention phone preference
+                window.location.href = `mailto:janiayab11@gmail.com?subject=New Booking Request - ${formData.service} (Phone Contact Preferred) 🎀&body=${encodeURIComponent(emailBody)}`;
+            } else {
+                // Email or both
+                window.location.href = `mailto:janiayab11@gmail.com?subject=New Booking Request - ${formData.service} 🎀&body=${encodeURIComponent(emailBody)}`;
+            }
             
             // Show success message
-            showSuccessMessage(`Thank you ${formData.name}! Your booking request has been sent. I'll contact you soon to confirm your ${formData.service} appointment. 🎀`);
+            showSuccessMessage(`Thank you ${formData.name}! Your detailed booking request has been sent. I'll contact you via ${formData.contactMethod === 'both' ? 'your preferred method' : formData.contactMethod} soon to confirm your ${formData.service} appointment. 🎀`);
             
             // Reset form
-            document.querySelector('.contact-form').reset();
+            resetDetailedBookingForm();
+        }
+
+        // Reset detailed booking form
+        function resetDetailedBookingForm() {
+            document.getElementById('name').value = '';
+            document.getElementById('email').value = '';
+            document.getElementById('phone').value = '';
+            document.getElementById('service').value = '';
+            document.getElementById('hair-length').value = '';
+            document.getElementById('preferred-date').value = '';
+            document.getElementById('message').value = '';
+            
+            // Reset contact method to email
+            const emailRadio = document.querySelector('input[name="contact-method"][value="email"]');
+            if (emailRadio) {
+                emailRadio.checked = true;
+            }
+            
             clearFormHighlights();
         }
 
@@ -1401,7 +1461,7 @@ ${new Date().toLocaleString()}`;
             document.getElementById('newsletter-email').value = '';
         }
 
-        // Mobile menu toggle - Updated for lighter animations
+        // Mobile menu toggle - Enhanced for mobile compatibility
         function toggleMobileMenu() {
             const mobileMenu = document.getElementById('mobileMenu');
             const menuBtn = document.querySelector('.mobile-menu-btn');
@@ -1413,12 +1473,16 @@ ${new Date().toLocaleString()}`;
                     menuBtn.classList.add('active');
                     menuBtn.innerHTML = '✕';
                     menuBtn.setAttribute('aria-expanded', 'true');
+                    // Prevent body scroll when menu is open
+                    document.body.style.overflow = 'hidden';
                 } else {
                     mobileMenu.classList.add('hidden');
                     mobileMenu.style.display = 'none';
                     menuBtn.classList.remove('active');
                     menuBtn.innerHTML = '☰';
                     menuBtn.setAttribute('aria-expanded', 'false');
+                    // Restore body scroll
+                    document.body.style.overflow = 'auto';
                 }
             }
         }
@@ -1433,6 +1497,8 @@ ${new Date().toLocaleString()}`;
                 menuBtn.classList.remove('active');
                 menuBtn.innerHTML = '☰';
                 menuBtn.setAttribute('aria-expanded', 'false');
+                // Restore body scroll
+                document.body.style.overflow = 'auto';
             }
         }
 
@@ -1457,7 +1523,7 @@ ${new Date().toLocaleString()}`;
             }
         });
 
-        // Initialize all functionality when DOM is loaded
+        // Initialize all functionality when DOM is loaded - Enhanced for mobile
         document.addEventListener('DOMContentLoaded', function() {
             // Initialize date picker
             const dateInput = document.getElementById('preferred-date');
@@ -1481,7 +1547,79 @@ ${new Date().toLocaleString()}`;
             const closeBtn = document.querySelector('#bookingModal .close');
             if (closeBtn) {
                 closeBtn.addEventListener('click', closeBookingModal);
+                // Add touch event for mobile
+                closeBtn.addEventListener('touchend', function(e) {
+                    e.preventDefault();
+                    closeBookingModal();
+                });
             }
+
+            // Enhanced mobile menu button handling
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            if (mobileMenuBtn) {
+                // Remove existing event listeners
+                mobileMenuBtn.removeEventListener('click', toggleMobileMenu);
+                
+                // Add both click and touchend for mobile compatibility
+                mobileMenuBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    toggleMobileMenu();
+                });
+                
+                mobileMenuBtn.addEventListener('touchend', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    toggleMobileMenu();
+                });
+            }
+
+            // Enhanced book now buttons for mobile
+            const bookButtons = document.querySelectorAll('[onclick*="openBookingModal"]');
+            bookButtons.forEach(button => {
+                // Add touch event for mobile
+                button.addEventListener('touchend', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    openBookingModal();
+                });
+            });
+
+            // Fix mobile navigation links
+            const navLinks = document.querySelectorAll('a[href^="#"]');
+            navLinks.forEach(link => {
+                link.addEventListener('touchend', function(e) {
+                    const href = this.getAttribute('href');
+                    if (href && href !== '#book') {
+                        const target = document.querySelector(href);
+                        if (target) {
+                            e.preventDefault();
+                            closeMobileMenu(); // Close menu first
+                            setTimeout(() => {
+                                target.scrollIntoView({
+                                    behavior: 'smooth',
+                                    block: 'start'
+                                });
+                            }, 100);
+                        }
+                    }
+                });
+            });
+
+            // Enhanced service card clicks for mobile
+            const serviceCards = document.querySelectorAll('[onclick*="showServiceDetails"]');
+            serviceCards.forEach(card => {
+                card.addEventListener('touchend', function(e) {
+                    e.preventDefault();
+                    const onclickAttr = this.getAttribute('onclick');
+                    if (onclickAttr) {
+                        const match = onclickAttr.match(/showServiceDetails\('([^']+)'\)/);
+                        if (match) {
+                            showServiceDetails(match[1]);
+                        }
+                    }
+                });
+            });
         });
 
         // Enhanced star rating initialization - Fixed version
@@ -1648,7 +1786,7 @@ ${new Date().toLocaleString()}`;
             }
         }
 
-        // Close mobile menu when clicking outside
+        // Close mobile menu when clicking/touching outside - Enhanced
         document.addEventListener('click', function(event) {
             const mobileMenu = document.getElementById('mobileMenu');
             const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
@@ -1659,7 +1797,7 @@ ${new Date().toLocaleString()}`;
             }
         });
 
-        // Handle mobile menu for touch devices
+        // Handle mobile menu for touch devices - Enhanced
         document.addEventListener('touchstart', function(event) {
             const mobileMenu = document.getElementById('mobileMenu');
             const nav = document.querySelector('nav');
@@ -1669,7 +1807,7 @@ ${new Date().toLocaleString()}`;
             }
         });
 
-        // Handle escape key for modals and menus
+        // Handle escape key for modals and menus - Enhanced
         document.addEventListener('keydown', function(event) {
             if (event.key === 'Escape') {
                 // Close booking modal
@@ -1684,6 +1822,17 @@ ${new Date().toLocaleString()}`;
                     closeMobileMenu();
                 }
             }
+        });
+
+        // Prevent double-tap zoom on buttons (mobile fix)
+        document.addEventListener('DOMContentLoaded', function() {
+            const buttons = document.querySelectorAll('button, .cta-button, .interactive-btn');
+            buttons.forEach(button => {
+                button.addEventListener('touchend', function(e) {
+                    // Prevent zoom on double tap
+                    e.preventDefault();
+                });
+            });
         });
     </script>
 </body>
